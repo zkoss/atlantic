@@ -1,0 +1,109 @@
+@import "~./zul/less/_header.less";
+
+.z-window {
+	border: 1px solid @windowBorderColor;
+	background: @windowBackground;
+
+	&-header {
+		.fontStyle(@titleFontFamily, @windowTitleFontSize, @fontWeightLight, @windowTitleColor);
+		min-height: @headerHeight;
+		padding: @paddingSize - 1 @paddingLarge - 1;
+		line-height: @headerHeight - @paddingSize * 2;
+		cursor: default;
+		overflow: hidden;
+
+		&-move {
+			cursor: move;
+		}
+	}
+
+	&-content {
+		padding: @paddingSize - 1 @paddingLarge - 1;
+		background: @baseBackground;
+		overflow: hidden;
+	}
+
+	&-icon {
+		.iconFontStyle(@iconSize, @iconColor);
+		.displaySize(block, @iconWidth, @iconHeight);
+		margin-top: (@headerHeight - @paddingSize * 2 - @iconHeight) / 2;
+		line-height: @iconHeight;
+		text-align: center;
+		cursor: pointer;
+		overflow: hidden;
+		float: right;
+
+		&:hover {
+			color: @hoverColor;
+			background: @hoverBackground;
+		}
+	}
+
+	&-minimize {
+		padding-top: 4px;
+	}
+
+	&-resize-faker {
+		border: 1px dashed #1854C2;
+		background: #D7E6F7;
+		.opacity(0.5);
+		position: absolute;
+		left: 0;
+		top: 0;
+		overflow: hidden;
+		z-index: 60000;
+	}
+
+	&-move-ghost {
+		border: 1px solid #9F9F9F;
+		padding: 0;
+		background: #D7E6F7;
+		.opacity(0.65);
+		position: absolute;
+		cursor: move;
+		overflow: hidden;
+
+		dl {
+			font-size: 0;
+			display: block;
+			border-top: 1px solid @baseBorderColor;
+			margin: 0;
+			padding: 0;
+			line-height: 0;
+			overflow: hidden;
+		}
+	}
+
+	&-noborder {
+		border-width: 0px;
+	}
+}
+
+.z-messagebox {
+	&-window .z-window-content {
+		padding: @paddingLarge;
+	}
+	.z-label {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+	}
+	&-button {
+		width: 100%;
+		min-width: 48px;
+	}
+	&-icon {
+		.size(32px, 32px);
+		background-repeat: no-repeat;
+	}
+	&-question {
+		.encodeThemeURL(background-image, '~./zul/img/msgbox/question-btn.png');
+	}
+	&-exclamation {
+		.encodeThemeURL(background-image, '~./zul/img/msgbox/warning-btn.png');
+	}
+	&-information {
+		.encodeThemeURL(background-image, '~./zul/img/msgbox/info-btn.png');
+	}
+	&-error {
+		.encodeThemeURL(background-image, '~./zul/img/msgbox/stop-btn.png');
+	}
+}

@@ -1,0 +1,162 @@
+@import "~./zul/less/_header.less";
+
+.z-popup {
+	background: @popupBackground;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+
+	&-content {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @popupColor);
+		height: 100%;
+		padding: @paddingSize;
+		line-height: normal;
+	}
+}
+
+// notification
+.z-notification {
+	color: @notificationColor;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.z-notification-icon {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+
+	&.z-icon-remove {
+		margin-top: -@iconSize/2;
+		left: 3px;
+	}
+
+	&.z-icon-remove-sign, 
+	&.z-icon-exclamation-sign,
+	&.z-icon-info-sign {
+		font-size: @iconSize*2;
+		margin-top: -@iconSize*2/2;
+		left: 12px;
+	}
+}
+
+.z-notification-pointer + .z-notification-icon {
+	left: 24px;
+}
+
+.z-notification-down + .z-notification-icon,
+.z-notification-up + .z-notification-icon, 
+.z-notification-right + .z-notification-icon,
+.z-notification-pointer[style*=none] + .z-notification-icon {
+	left: 14px;
+}
+
+.z-notification-up + .z-notification-icon {
+	margin-top: -6px;
+}
+
+.z-notification-down + .z-notification-icon {
+	margin-top: -18px;
+}
+
+.z-notification-content {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @notificationColor);
+	width: 250px;
+	min-height: 130px;
+	padding: 15px 18px 15px 45px;
+	position: relative;
+	overflow: hidden;
+}
+
+.z-notification-pointer ~ .z-notification-content {
+	.displaySize(table-cell, 125px, 60px);
+	min-height: 60px; // fix for IE9
+	padding: 5px 18px 5px 45px;
+	vertical-align: middle;
+}
+
+.z-notification-pointer {
+	.displaySize(none, 0, 0);
+	border: 10px solid transparent;
+	position: absolute;
+	z-index: 100;
+}
+// notification arrow
+.z-notification {
+	// Base style
+	&-left, &-right, &-up, &-down {
+		border: 10px solid transparent;
+	}
+	&-left { border-right-color: @notificationArrowColor; }
+	&-right { border-left-color: @notificationArrowColor; }
+	&-up { border-down-color: @notificationArrowColor; }
+	&-down { border-top-color: @notificationArrowColor; }
+	// Info style
+	&-info {
+		.z-notification {
+			&-content { background: @notificationInfoColor; }
+			&-left { border-right-color: @notificationInfoColor; }
+			&-right {border-left-color: @notificationInfoColor; }
+			&-up { border-down-color: @notificationInfoColor; }
+			&-down { border-top-color: @notificationInfoColor; }
+		}
+	}
+	// Warning style
+	&-warning {
+		.z-notification {
+			&-content { background: @notificationWarningColor; }
+			&-left { border-right-color: @notificationWarningColor; }
+			&-right { border-left-color: @notificationWarningColor; }
+			&-up { border-down-color: @notificationWarningColor; }
+			&-down { border-top-color: @notificationWarningColor; }
+		}
+	}
+	// Error style
+	&-error {
+		.z-notification {
+			&-content { background: @notificationErrorColor; }
+			&-left { border-right-color: @notificationErrorColor; }
+			&-right { border-left-color: @notificationErrorColor; }
+			&-up { border-down-color: @notificationErrorColor; }
+			&-down { border-top-color: @notificationErrorColor; }
+		}
+	}
+}
+
+.z-notification-close {
+	font-size: @iconSize;
+	.displaySize(block, @smallIconWidth, @smallIconHeight);
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	cursor: pointer;
+
+	&:hover {
+		background: @baseBackground;
+	}
+}
+
+.z-notification-pointer ~ .z-notification-close {
+	top: 5px;
+	right: 5px;
+}
+.z-notification-right ~ .z-notification-close {
+	top: 5px;
+	right: 17px;
+}
+.z-notification-up ~ .z-notification-close {
+	top: 17px;
+}
+
+.z-notification-info .z-notification-close:hover {
+	color: @notificationInfoColor;
+}
+.z-notification-warning .z-notification-close:hover {
+	color: @notificationWarningColor;
+}
+.z-notification-error .z-notification-close:hover {
+	color: @notificationErrorColor;
+}

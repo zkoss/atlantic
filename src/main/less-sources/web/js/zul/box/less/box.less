@@ -1,0 +1,112 @@
+@import "~./zul/less/_header.less";
+
+//reset table
+.resetTable() {
+	border-spacing: 0;
+	th, td {
+		background-clip: padding-box;
+		padding: 0;
+	}
+	th {
+		text-align: inherit;
+	}
+}
+
+.z-hbox,
+.z-vbox {
+	.resetTable();
+
+	&-separator {
+		padding: 0;
+		margin: 0;
+	}
+}
+.z-hbox-separator {
+	width: 0.3em;
+}
+.z-vbox-separator {
+	height: 0.3em;
+	td {
+		line-height: 0;
+	}
+}
+
+// Splitter
+tr.z-splitter-outer > td {
+	height: @baseHeight;
+	max-height: @baseHeight;
+}
+td.z-splitter-outer {
+	width: @baseWidth;
+	max-width: @baseWidth;
+	padding: 0;
+}
+.z-splitter {
+	&-vertical,
+	&-horizontal {
+		border: 1px solid @baseBorderColor;
+		background: @splitterBackground;
+		overflow: hidden;
+	}
+	&-button {
+		display: inline-block;
+		border: 1px solid @baseBorderColor;
+		vertical-align: top; //vertical-align: make it looks same in diff browsers
+		position: relative;
+		cursor: pointer;
+
+		&:hover {
+			background: @splitterHoverBackground;
+		}
+		&-disabled {
+			border-width: 0;
+
+			.z-splitter-vertical & {
+				cursor: s-resize;
+			}
+			.z-splitter-horizontal & {
+				cursor: e-resize;
+			}
+		}
+	}
+	&-icon {
+		.iconFontStyle(@iconSize, @iconColor);
+		position: absolute;
+
+		&.z-icon-ellipsis-vertical,
+		&.z-icon-ellipsis-horizontal {
+			display: none;
+		}
+	}
+	&-nosplitter {
+		cursor: default;
+	}
+	&-horizontal {
+		width: @baseWidth;
+		border-width: 0 1px;
+		cursor: e-resize;
+	
+		> .z-splitter-button {
+			.size(8px, 30px);
+			border-width: 1px 0;
+		}
+		.z-splitter-icon {
+			top: 9px;
+			left: 1px;
+		}
+	}
+	&-vertical {
+		height: @baseHeight;
+		border-width: 1px 0;
+		cursor: s-resize;
+	
+		> .z-splitter-button {
+			.size(30px, 8px);
+			border-width: 0 1px;
+		}
+		.z-splitter-icon {
+			top: -3px;
+			left: 11px;
+		}
+	}
+}

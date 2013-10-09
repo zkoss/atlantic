@@ -1,0 +1,369 @@
+@import "~./zul/less/_header.less";
+
+.userSelect() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.z-toolbar.z-toolbar-tabs {
+	background: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.z-tabbox {
+	position: relative;
+	overflow: hidden;
+	&-icon {
+		.iconFontStyle(@fontSizeMedium, @tabColor);
+		display: none;
+		min-height: @headerHeight;
+		border: 1px solid @baseBorderColor;
+		line-height: @headerHeight - 2;
+		background: @tabBackground;
+		text-align: center;
+		position: absolute;
+		top: 0;
+		cursor: pointer;
+		z-index: 25;
+		.userSelect();
+		&:hover {
+			background: @tabHoverBackground;
+		}
+	}
+	&-left,
+	&-right {
+		width: @headerWidth;
+	}
+	&-right {
+		right: 0;
+	}
+	&-up,
+	&-down {
+		height: @headerHeight;
+	}
+	&-down {
+		top: auto;
+		bottom: 0;
+	}
+	// horizontal (default)
+	&-horizontal {
+		.z-tab {
+			display: inline-block;
+		}
+		.z-tab-selected {
+			border-bottom-width: 0;
+			padding-bottom: @paddingSize;
+		}
+		.z-tabpanel {
+			border-top-width: 0;
+			padding-top: @paddingSmall;
+		}
+		.z-toolbar-tabs {
+			border-width: 0 0 1px 0;
+			padding: @paddingSize @paddingSize @paddingSize - 1;
+		}
+	}
+	// horizontal-bottom
+	&-horizontal-bottom {
+		.z-tab {
+			display: inline-block;
+		}
+		.z-tab-selected {
+			border-top-width: 0;
+			padding-top: @paddingSize;
+		}
+		.z-tabpanel {
+			border-bottom-width: 0;
+			padding-bottom: @paddingSize;
+		}
+		.z-tabbox-icon {
+			top: auto;
+			bottom: 0;
+		}
+		.z-toolbar-tabs {
+			border-width: 1px 0 0 0;
+			padding: @paddingSize - 1 @paddingSize @paddingSize;
+			top: auto;
+			bottom: 0;
+		}
+	}
+	// vertical
+	&-vertical {
+		.z-tabs {
+			float: left;
+	
+			&-content {
+				.displaySize(block, 100%, 4096px);
+			}
+		}
+		.z-tab {
+			float: none;
+			
+			&-button {
+				left: @paddingSize;
+				right: auto;
+				
+				& +.z-tab-text {
+					margin-right: 0;
+					margin-left: @iconWidth + @paddingSize;
+				}
+			}
+			&-selected {
+				border-right-width: 0;
+				padding-right: @paddingSize;
+			}
+		}
+		.z-tabpanel {
+			border-left-width: 0;
+			padding-left: @paddingSmall;
+		}
+		&.z-tabbox-scroll {
+			> .z-tabs {
+				margin: @headerHeight 0px;
+			}
+		}
+	}
+
+	// vertical-right
+	&-vertical-right {
+		.z-tabs {
+			float: right;
+			
+			&-content {
+				.displaySize(block, 100%, 4096px);
+			}
+		}
+		.z-tab {
+			float: none;
+			
+			&-selected {
+				border-left-width: 0;
+				padding-left: @paddingSize;
+			}
+		}
+		.z-tabpanel {
+			border-right-width: 0;
+			padding-right: @paddingSmall;
+		}
+		&.z-tabbox-scroll {
+			> .z-tabs {
+				margin: @headerHeight 0;
+			}
+		}
+		.z-tabbox-icon {
+			right: 0;
+		}
+	}
+
+	// .z-tabbox-scroll
+	&-scroll {
+		> .z-tabs {
+			margin: 0px @headerWidth;
+		}
+		.z-tabbox-icon {
+			display: block;
+		}
+	}
+
+	// accordion
+	&-accordion {
+		> .z-tabpanels {
+			border-top: 1px solid @baseBorderColor;
+			> .z-tabpanel {
+				border: none;
+				padding: 0;
+			}
+		}
+		.z-tabpanel > .z-tabpanel-content {
+			border: 1px solid @baseBorderColor;
+			border-top-width: 0px;
+			padding: @paddingSmall;
+			background: @baseBackground;
+			zoom: 1;
+		}
+		.z-tabpanel > .z-tab {
+			color: @tabColor;
+			border-top-width: 0;
+			padding-top: @paddingSize;
+			background: @tabBackground;
+			text-align: left;
+			float: none;
+			zoom: 1;
+
+			&-selected {
+				background: @accordionSelectedBackground;
+				.boxShadow(none);
+				cursor: default;
+
+				.z-tab-button,
+				.z-tab-text {
+					color: @accordionSelectedColor;
+				}
+				.z-tab-button:hover {
+					color: @tabHoverColor;
+					background: @baseBackground;
+				}
+			}
+			&-disabled {
+				color: @disabledColor;
+				background: @disabledBackground;
+				.opacity(@disabledOpacity);
+				cursor: default;
+
+				.z-tab-button:hover {
+					.opacity(@disabledOpacity);
+				}
+
+				.z-tab-text {
+					color: @disabledColor;
+					.opacity(@disabledOpacity);
+					white-space: nowrap;
+					cursor: default;
+				}
+			}
+		}
+	}
+}
+
+.z-tabs {
+	position: relative;
+	overflow: hidden;
+
+	&-content {
+		.displaySize(table, 100%, 100%);
+		border-collapse: separate;
+		border-spacing: 0;
+		margin: 0;
+		padding: 0;
+		list-style-image: none;
+		list-style-position: outside;
+		list-style-type: none;
+	}
+}
+
+.z-tab {
+	display: block;
+	min-height: @headerHeight;
+	border: 1px solid @baseBorderColor;
+	padding: @paddingSize - 1;
+	line-height: @headerHeight - @paddingSize * 2;
+	background: @tabBackground;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	float: left;
+
+	&-content {
+		display: block;
+	}
+
+	&:hover {
+		background: @tabHoverBackground;
+	}
+
+	&-text {
+		.fontStyle(@titleFontFamily, @fontSizeLarge, @baseFontWeight, @tabColor);
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	&-image {
+		vertical-align: middle;
+	}
+
+	&-button {
+		.iconFontStyle(@baseFontSize, @tabColor);
+		.size(@iconWidth, @iconHeight);
+		margin-top: -@iconHeight / 2;
+		line-height: @iconHeight;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		right: @paddingSize;
+		cursor: pointer;
+		z-index: 15;
+		zoom: 1;
+		.userSelect();
+
+		&:hover {
+			color: @tabHoverColor;
+			background: @baseBackground;
+		}
+		& + .z-tab-text {
+			margin-right: @iconWidth + @paddingSize;
+		}
+	}
+	.z-caption {
+		margin: auto;
+	}
+	&-selected {
+		background: @baseBackground;
+		
+		&:hover {
+			background: @baseBackground;
+		}
+		.z-tab-text {
+			font-weight: @fontWeightSemiBold;
+			color: @tabSelectedColor;
+			cursor: default;
+		}
+		.z-tab-button {
+			color: @tabSelectedColor;
+			
+			&:hover {
+				color: @hoverColor;
+				background: @hoverBackground;
+			}
+		}
+	}
+	&-disabled {
+		background: @disabledBackground;
+		.opacity(@disabledOpacity);
+		cursor: default;
+		&:hover {
+			background: @disabledBackground;
+		}
+		.z-tab-button:hover {
+			color: @disabledColor;
+			background: @disabledBackground;
+			.opacity(@disabledOpacity);
+			cursor: default;
+		}
+		.z-tab-text {
+			color: @disabledColor;
+			cursor: default;
+			white-space: nowrap;
+		}
+	}
+}
+
+.z-tabpanels {
+	position: relative;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.z-tabpanel {
+	border: 1px solid @baseBorderColor;
+	padding: @paddingSmall - 1;
+	background: @baseBackground;
+}
+
+.ie8 {
+	.z-tabbox-icon {
+		min-height: @headerHeight - @paddingSize * 2;
+	}
+	.z-tab {
+		min-height: @headerHeight - @paddingSize * 2;
+	}
+}

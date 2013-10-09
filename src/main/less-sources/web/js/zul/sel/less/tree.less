@@ -1,0 +1,256 @@
+@import "~./zul/less/_header.less";
+
+//reset table
+.resetTable() {
+	table {
+		border-spacing: 0;
+		th, td {
+			background-clip: padding-box;
+			padding: 0;
+		}
+		th {
+			text-align: inherit;
+		}
+	}
+}
+
+//tree
+.z-tree {
+	border: 1px solid @baseBorderColor;
+	overflow: hidden;
+	zoom: 1;
+	//tree header div
+	&-header {
+		width: 100%;
+		background: @meshTitleBackground;
+		overflow: hidden;
+		.resetTable();
+	}
+	&-header-border {
+		border-bottom: 1px solid @baseBorderColor;
+		margin-top: -1px;
+		position: relative;
+	}
+	//tree body div
+	&-body {
+		position: relative;
+		overflow: hidden;
+		.resetTable();
+	}
+	&-emptybody td {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @meshEmptyColor);
+		font-style: italic;
+		padding: @paddingSmall @paddingSize !important;
+		line-height: @buttonHeight - @paddingSmall * 2;
+		text-align: center;
+	}
+	//tree footer div
+	&-footer {
+		border-top: 1px solid @baseBorderColor;
+		background: @meshFootBackground;
+		overflow: hidden;
+		.resetTable();
+	}
+}
+//tree open icon and indent space
+.z-tree {
+	&-icon,
+	&-line {
+		.displaySize(inline-block, @iconWidth, @iconHeight);
+		vertical-align: middle;
+	}
+	&-icon {
+		.iconFontStyle(@baseFontSize, @baseTextColor);
+		text-align: center;
+		position: relative;
+		cursor: pointer;
+	}
+}
+//treecols
+.z-treecols {
+	&:first-child th {
+		border-top-width: 0;
+	}
+	th:first-child {
+		border-left: none;
+
+		// B50-3306729: the first header should have border-left when the first column is covered with other header
+		&.z-treecols-border {
+			border-left: 1px solid @meshTitleBorderColor;
+		}
+	}
+	&-bar {
+		border-top: 1px solid @meshTitleBorderColor;
+		border-left: 1px solid @meshTitleBorderColor;
+	}
+}
+.z-treecol {
+	border-top: 1px solid @meshTitleBorderColor;
+	border-left: 1px solid @meshTitleBorderColor;
+	padding: 0;
+	background: @meshTitleBackground;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+
+	&-sort {
+		cursor: pointer;
+	}
+	&-sizing,
+	&-sizing .z-treecol-content {
+		cursor: e-resize;
+	}
+}
+//tree row and cell
+.z-treerow {
+	//tree cell
+	.z-treecell {
+		overflow: hidden;
+		cursor: pointer;
+	}
+	&:hover {
+		> .z-treecell {
+			background: @hoverBackground;
+		}
+		.z-treecell-content,
+		.z-tree-icon {
+			color: @hoverColor;
+		}
+	}
+	//check mark
+	&-checkable {
+		.displaySize(inline-block, @checkedSize, @checkedSize);
+		border: 1px solid @checkedBorderColor;
+		background: @checkedBackground;
+		vertical-align: text-top;
+
+		&.z-treerow-radio {
+			.borderRadius(@checkedSize / 2);
+		}
+		.z-treerow-icon {
+			display: none;
+			cursor: pointer;
+		}
+	}
+	//selected
+	&-selected {
+	 	//tree cell and content
+		.z-treecell {
+			border-color: @selectedBorderColor;
+			background: @selectedBackground;
+		}
+		.z-treecell-content {
+			color: @selectedColor;
+		}
+		&:hover {
+			> .z-treecell {
+				border-color: @selectedHoverBorderColor;
+				background: @selectedHoverBackground;
+			}
+			.z-listcell-content,
+			.z-tree-icon {
+				color: @selectedHoverColor;
+			}
+		}
+		//check mark
+		.z-treerow-icon {
+			.iconFontStyle(@checkedFontSize, @checkedColor);
+			display: block;
+			margin-top: -@checkedFontSize / 2;
+			line-height: normal;
+			text-align: center;
+			position: relative;
+			top: 50%;
+
+			&.z-icon-ok {} //for checkbox, use font-awesome
+			&.z-icon-radio { //for radio
+				.size(@checkedSize / 2, @checkedSize / 2);
+				.borderRadius(@checkedSize / 4);
+				margin-top: -@checkedSize / 4;
+				margin-left: -@checkedSize / 4;
+				background: @checkedColor;
+				left: 50%;
+			}
+		}
+	}
+	//disabled
+	&.z-treerow-disabled {
+		* {
+			color: @meshDisabledColor !important;
+			background: @meshDisabledBackground;
+			cursor: default !important;
+		}
+		&:hover > .z-treecell {
+			background: @meshDisabledBackground;
+		}
+	}
+}
+//content
+.z-treecol-content {
+	.fontStyle(@titleFontFamily, @meshTitleFontSize, @fontWeightSemiBold, @meshTitleColor);
+	padding: @paddingSmall @paddingSize;
+	line-height: @headerHeight - @paddingSmall * 2;
+	overflow: hidden;
+}
+.z-treecell-content,
+.z-treefooter-content {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+	padding: @paddingSmall - 1 @paddingSmall @paddingSmall;
+	line-height: @buttonHeight - @paddingSmall * 2;
+	overflow: hidden;
+	cursor: pointer;
+}
+.z-treefooter-content {
+	line-height: @barHeight - @paddingSmall * 2;
+	cursor: default;
+}
+.z-treecell-text {
+	vertical-align: middle;
+}
+//paging
+.z-tree-paging {
+	&-top {
+		overflow: hidden;
+		width: 100%;
+
+		.z-paging {
+			border: none;
+			border-bottom: 1px solid @baseBorderColor;
+		}
+	}
+	&-bottom {
+		overflow: hidden;
+		width: 100%;
+
+		.z-paging {
+			border: none;
+			border-top: 1px solid @baseBorderColor;
+		}
+	}
+}
+
+//IE8 use image for radio icon
+.ie8 {
+	.z-treerow {
+		.z-icon-radio {
+			.displaySize(block, 13px, 13px);
+			.encodeThemeURL(background, '~./zul/img/common/check-sprite.gif', no-repeat);
+			position: relative;
+			top: 5px;
+			left: 5px;
+		}
+		&-radio {
+			border-width: 0;
+			background: transparent;
+
+			.z-icon-radio {
+				background-position: 0 -13px;
+			}
+		}
+		&-selected .z-icon-radio {
+			border-width: 0;
+			margin: 0;
+			background-position: -26px -13px;
+		}
+	}
+}

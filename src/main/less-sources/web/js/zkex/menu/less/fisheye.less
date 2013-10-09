@@ -1,0 +1,28 @@
+@import "~./zul/less/_header.less";
+
+.z-fisheye {
+	position: absolute;
+	cursor: pointer;
+	z-index: 2;
+
+	&-image {
+		.size(100%, 100%);
+		border-width: 0;
+		position: absolute;
+		cursor: pointer;
+	}
+
+	&-text {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+		display: none;
+		border: 1px solid @baseBorderColor;
+		padding: @paddingSmall - 1;
+		background: @baseBackground;
+		text-align: center; 
+		position: absolute;
+		cursor: pointer;
+	}
+}
+.z-fisheyebar-inner {
+	position: relative;
+}

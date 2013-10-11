@@ -9,7 +9,7 @@ Usage:
 2. Now you can also dynamically switch between different themes by cookie or library property
 	* Use library-property in in WEB-INF/zk.xml
 
-			<library-property&gt;
+			<library-property>
 				<name>org.zkoss.theme.preferred</name>
 				<value>atlantic</value>
 			</library-property>

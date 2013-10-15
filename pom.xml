@@ -50,6 +50,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>org.zkoss.zk</groupId>
+			<artifactId>zkmax</artifactId>
+			<version>${zk.version}</version>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 	<build>
 		<testOutputDirectory>${project.build.directory}/classes</testOutputDirectory>

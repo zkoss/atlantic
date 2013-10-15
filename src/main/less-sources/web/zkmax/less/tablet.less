@@ -1,0 +1,586 @@
+@import "~./zul/less/_header.less";
+
+@iphone: ~"only screen and (min-device-width : 320px) and (max-device-width : 480px)";
+@android: ~"only screen and (min-device-width : 480px) and (max-device-width : 720px)";
+
+// Reset rounded corner for iOS
+input {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+// Checkbox
+input[type=checkbox] {
+	-webkit-appearance: none;
+	.size(@checkedSize, @checkedSize);
+	border: 1px solid @checkedBorderColor;
+	background: @checkedBackground;
+	position: relative;
+	
+	&:checked {
+		.iconFontStyle(@baseFontSize, @checkedColor);
+		line-height: @checkedSize - 2; // minus border
+		background: @checkedBackground; // ios has black background
+		text-align: center;
+	}
+}
+
+// Radio
+input[type=radio] {
+	-webkit-appearance: none;
+	.size(@checkedSize, @checkedSize);
+	border: 1px solid @checkedBorderColor;
+	.borderRadius(@checkedSize / 2);
+	background: @checkedBackground;
+	position: relative;
+	
+	&:checked {
+		background: @checkedBackground;
+		
+		&:after {
+			content: '';
+			.size(@checkedSize / 2, @checkedSize / 2);
+			.borderRadius(@checkedSize / 4);
+			margin-top: -@checkedSize / 2;
+			margin-left: -@checkedSize / 2;
+			background: @checkedColor;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+	}
+}
+
+// Splitter
+.z-splitter {
+	&-vertical,
+	&-horizontal {
+		overflow: visible;
+	}
+	&-button {
+		background: @baseBackground;
+		
+		&.z-splitter-button-disabled {
+			.size(0, 0);
+		}
+	}
+	&-icon {
+		font-size: @fontSizeLarge;
+	}
+	&-vertical {
+		> .z-splitter-button {
+			.size(32px, 16px);
+			top: -4px;
+		}
+		.z-splitter-icon {
+			font-size: 16px;
+			top: -2px;
+		}
+		&.z-splitter-nosplitter .z-splitter-icon {
+			top: 0;
+		}
+	}
+	&-horizontal {
+		> .z-splitter-button {
+			.size(16px, 32px);
+			left: -5px;
+		}
+		.z-splitter-icon {
+			top: 7px;
+			left: 4px;
+		}
+		&.z-splitter-nosplitter .z-splitter-icon {
+			left: 6px;
+		}
+	}
+}
+
+// Splitter in Borderlayout
+.z-east-splitter,
+.z-west-splitter,
+.z-north-splitter,
+.z-south-splitter {
+	overflow: visible;
+	
+	&-button {
+		border: 1px solid @baseBorderColor;
+		background: @baseBackground;
+		
+		&-disabled {
+			.displaySize(none, 0, 0);
+		}
+	}
+}
+.z-north-splitter-button,
+.z-south-splitter-button {
+	.size(32px, 16px);
+	top: -4px;
+}
+.z-west-splitter-button,
+.z-east-splitter-button {
+	.size(16px, 32px);
+	left: -4px;
+}
+.z-north-icon,
+.z-south-icon,
+.z-west-icon,
+.z-east-icon {
+	font-size: @fontSizeLarge;
+}
+.z-west-icon,
+.z-east-icon {
+	margin-top: -6px;
+	top: 50%;
+	left: 4px;
+}
+.z-east-icon {
+	left: 5px;
+}
+.z-north-icon,
+.z-south-icon {
+	margin-top: -6px;
+	left: 11px;
+	top: 50%;
+}
+.z-north-icon {
+	margin-top: -7px;
+}
+
+//Combobox Popup, Comboitem
+.z-combobox-popup {
+	font-size: @fontSizeXLarge;
+	font-weight: @fontWeightSemiBold;
+}
+.z-comboitem {
+	padding: @paddingLarge @paddingSize;
+	line-height: normal;
+	
+	&-text {
+		display: inline-block;
+		margin-top: -@paddingSize;
+	}
+	&-inner { //description
+		font-size: @fontSizeMedium;
+		display: block;
+	}
+	&-image {
+		float: left;
+	}
+}
+
+//Spinner, Doublespinner
+.z-spinner,
+.z-doublespinner {
+	&-button {
+		width: @buttonWidth * 2; //up and down buttons in horizontal direction
+		clear: both;
+		
+		> a {
+			line-height: 32px;
+			float: right;
+		}
+	}
+	&-up {
+		border-left: 1px solid @inputBorderColor;
+	}
+}
+
+//Calendar and Timebox Popup Wheel
+.z-datebox-popup .z-calendar {
+	border: 0px;
+	min-width: 100px;
+}
+.z-timebox-popup .z-timebox-wheel-body {
+	margin: 4px 0;
+}
+.z-calendar-wheel,
+.z-timebox-wheel {
+	&-cave {
+		position: relative;
+	}
+	&-body {
+		.box(box-orient, horizontal);
+		width: 100%;
+	}
+	&-line {
+		.size(100%, 0);
+		border-top: 1px solid #333333;
+		border-bottom: 1px solid #555555;
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+	}
+	&-list {
+		.applyCSS3(box-flex, 1);
+		color: #FFFFFF;
+		height: 210px;
+		margin: 0 2px;
+		.gradValue(ver, '#000 0%; #444 45%; #444 55%; #000 100%');
+		position: relative;
+		overflow: hidden;
+		
+		ul {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			list-style: none;
+			z-index: 2;
+		}
+		
+		li {
+			font-size: 40px;
+			display: block;
+			height: 70px;
+			margin: 0;
+			padding: 0 5px;
+			line-height: 70px;
+			opacity: 0.3;
+			text-align: center;
+			white-space: nowrap;
+			text-shadow: 0 1px #FFFFFF;
+			list-style: none;
+		}
+	}
+	&-footer {
+		height: 50px;
+		padding: 5px 0;
+		clear: both;
+	}
+	&-button {
+		.fontStyle(@contentFontFamily, 30px, bold, #000000);
+		width: 45%;
+		border: 1px solid #A6A6A6;
+		.borderRadius(3px);
+		margin: 1px 1px 0 0;
+		padding: 5px 15px;
+		line-height: 28px;
+		.verGradient(#FEFEFE, #EEEEEE);
+		text-shadow: 0 1px #FFFFFF;
+		
+		&:hover,
+		&:focus {
+			border-color: #0CBCFF;
+			.boxShadow('inset 1px 1px 1px #0CBCFF, inset -1px -1px 1px #0CBCFF');
+		}
+		&:active {
+			border-color: #808080 #B6B6B6 #B6B6B6 #808080;
+			.verGradient(#EEEEEE, #FEFEFE);
+			.boxShadow('inset 1px 1px 1px rgba(210, 210, 210, 0.75), 0 0 7px #CFCFCF');
+		}
+	}
+	&-left {
+		float: left;
+	}
+	&-right {
+		float: right;
+	}
+}
+.z-timebox-wheel {
+	padding: 0 2px;
+	
+	&-list {
+		margin: 4px 0;
+	}
+}
+.z-calendar-whee-date,
+.z-timebox-wheel-time {
+	.borderRadius(3px);
+	position: relative;
+	.gradValue(ver, '#000 0%; #333 35%; #888 50%; #333 65%; #000 100%');
+}
+.z-calendar-whee-date {
+	.box2(box-orient, horizontal, box-flex, 1);
+	width: 100%;
+	margin-right: 4px;
+}
+.z-timebox-wheel-time {
+	.box('box-orient', 'horizontal');
+  	width: 50%;
+}
+li.z-calendar-wheel-list-selected,
+li.z-timebox-wheel-list-selected {
+	opacity: 1;
+}
+
+//Calendar and Timebox Popup Wheel for iPhone
+@media @iphone {
+	.z-calendar-wheel-date {
+		margin-right: 2px;
+	}
+	.z-calendar-wheel,
+	.z-timebox-wheel {
+		&-list {
+			height: 120px;
+			margin: 0 1px 0 0;
+			
+			li {
+				font-size: 20px;
+				height: 40px;
+				padding: 0;
+				line-height: 40px;
+			}
+		}
+		&-button {
+			font-size: 22px;
+		}
+		&-footer {
+			height: 35px;
+		}
+	}
+}
+//Calendar and Timebox Popup Wheel for Android
+@media @android {
+	.z-calendar-wheel-date {
+		margin-right: 2px;
+	}
+	.z-calendar-wheel,
+	.z-timebox-wheel {
+		&-list {
+			margin: 0 1px 0 0;
+			height: 150px;
+			
+			li {
+				font-size: 24px;
+				height: 50px;
+				padding: 0;
+				line-height: 50px;
+			}
+		}
+		&-button {
+			font-size: 26px;
+		}
+		&-footer {
+			height: 40px;
+		}
+	}
+}
+
+//Colorbox
+.z-colorbox {
+	.size(44px, 32px);
+}
+.z-colorpalette {
+	.size(586px, 460px);
+	
+	&-newcolor {
+		height: 32px;
+		left: 450px;
+	}
+	&-input {
+		height: 32px;
+		left: auto;
+		right: 6px;
+	}
+	&-color {
+		.size(32px, 32px);
+	}
+}
+.z-colorpicker {
+	.size(620px, 430px);
+	
+	&-gradient,
+	&-overlay {
+		.size(384px, 384px);
+	}
+	&-gradient {
+		left: 5px;
+		top: 40px;
+	}
+	&-overlay {
+		.encodeURL(background-image, '~./zkmax/img/tablet/colorbox/colorpicker_gradient.png');
+	}
+	&-hue {
+		.size(32px, 384px);
+		top: 40px;
+		left: 400px;
+	}
+	&-bar {
+		.size(26px, 384px);
+		.encodeURL(background-image, '~./zkmax/img/tablet/colorbox/colorpicker_hue.png');
+	}
+	&-arrows {
+		width: 40px;
+		.encodeURL(background-image, '~./zkmax/img/tablet/colorbox/colorpicker_arrows.png');
+	}
+	&-color {
+		top: 40px;
+		left: 450px;
+	}
+	&-hex {
+		top: 46px;
+		left: 510px;
+		
+		.z-colorpicker-input {
+			margin-left: 2px;
+			top: 0;
+		}
+	}
+	&-input {
+		.size(55px, 32px);
+		padding: 3px;
+		position: relative;
+		top: -5px;
+	}
+	&-r, &-g, &-b {
+		width: 70px;
+		left: 450px;
+	}
+	&-h, &-s, &-v {
+		width: 70px;
+		left: 530px;
+	}
+	&-r, &-h {
+		top: 125px;
+	}
+	&-g, &-s {
+		top: 160px;
+	}
+	&-b, &-v {
+		top: 195px;
+	}
+	&-button {
+		width: 150px;
+		top: 235px;
+		left: 450px;
+	}
+	&-icon {
+		font-size: 20px;
+	}
+}
+.z-colorbox-paletteicon,
+.z-menu-paletteicon,
+.z-colorbox-pickericon,
+.z-menu-pickericon {
+	.size(32px, 32px);
+	.encodeURL(background, '~./zkmax/img/tablet/colorbox/cb-buttons.png');
+	background-position: 0 0;
+}
+.z-palette-button .z-colorbox-paletteicon,
+.z-palette-button .z-menu-paletteicon,
+.z-colorpalette-popup .z-menu-paletteicon {
+	background-position: -32px 0;
+}
+.z-colorbox-pickericon,
+.z-menu-pickericon,
+.z-colorpalette-popup .z-menu-pickericon {
+	background-position: 0 -32px;
+	left: 40px;
+}
+.z-picker-button .z-colorbox-pickericon,
+.z-picker-button .z-menu-pickericon,
+.z-colorpicker-popup .z-menu-pickericon {
+	background-position: -32px -32px;
+}
+
+//Biglistbox
+.z-biglistbox {
+	&-outer {
+		margin: 0 32px 32px 0;
+	}
+	&-verticalbar-tick {
+		height: 32px;
+		border: 1px solid @baseBorderColor;
+		.horGradient(#FEFEFE, #EEEEEE);
+	}
+	&-wscroll-vertical {
+		width: 32px;
+		right: -33px;
+		.boxShadow('inset 1px 1px 7px rgba(210, 210, 210, 0.75), inset -1px -1px 7px rgba(210, 210, 210, 0.75)');
+	
+		.z-biglistbox-wscroll-drag {
+			border: 1px solid #A6A6A6;
+			.borderRadius(2em);
+			.encodeURL-verGradient('~./zkmax/img/tablet/big/drag-v.png', #FEFEFE, #EEEEEE);
+			background-position: center center;
+			background-repeat: no-repeat;
+			
+			.z-biglistbox-wscroll-home,
+			.z-biglistbox-wscroll-up,
+			.z-biglistbox-wscroll-down,
+			.z-biglistbox-wscroll-end {
+				.size(100%, 32px);
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			.z-biglistbox-wscroll-home {
+				border-bottom: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-v-home.png');
+			}
+			.z-biglistbox-wscroll-up {
+				border-bottom: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-v-up.png');
+				top: 32px;
+			}
+			.z-biglistbox-wscroll-down {
+				border-top: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-v-down.png');
+				bottom: 32px;
+			}
+			.z-biglistbox-wscroll-end {
+				border-top: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-v-end.png');
+			}
+		}
+		.z-biglistbox-wscroll-pos {
+			.size(24px, 176px);
+			.borderRadius(2em);
+			left: 4px;
+		}
+		.z-biglistbox-wscroll-endbar {
+			width: 30px;
+			background: #FDFDFD;
+		}
+	}
+	&-wscroll-horizontal {
+		height: 32px;
+		bottom: -33px;
+		.boxShadow('inset 1px 1px 7px rgba(210, 210, 210, 0.75), inset -1px -1px 7px rgba(210, 210, 210, 0.75)');
+	
+		.z-biglistbox-wscroll-drag {
+			.size(176px, 32px);
+			border: 1px solid #A6A6A6;
+			.borderRadius(2em);
+			.encodeURL-verGradient('~./zkmax/img/tablet/big/drag-h.png', #FEFEFE, #EEEEEE);
+			background-position: center center;
+			background-repeat: no-repeat;
+			
+			.z-biglistbox-wscroll-home,
+			.z-biglistbox-wscroll-up,
+			.z-biglistbox-wscroll-down,
+			.z-biglistbox-wscroll-end {
+				.size(32px, 100%);
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+			.z-biglistbox-wscroll-home {
+				border-right: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-h-home.png');
+			}
+			.z-biglistbox-wscroll-up {
+				border-right: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-h-up.png');
+				left: 32px;
+			}
+			.z-biglistbox-wscroll-down {
+				border-left: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-h-down.png');
+				right: 32px;
+			}
+			.z-biglistbox-wscroll-end {
+				border-left: 1px solid #A6A6A6;
+				.encodeURL(background-image, '~./zkmax/img/tablet/big/drag-h-end.png');
+			}
+		}
+		.z-biglistbox-wscroll-pos {
+			.size(176px, 24px);
+			.borderRadius(2em);
+			top: 4px;
+		}
+		.z-biglistbox-wscroll-endbar {
+			height: 30px;
+			background: #FDFDFD;
+		}
+	}
+}

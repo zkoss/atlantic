@@ -1,0 +1,91 @@
+@import "~./atlantic/zul/less/_header.less";
+
+.z-groupbox {
+	padding-top: @paddingLarge;
+
+	> .z-groupbox-header {
+		.fontStyle(@titleFontFamily, @baseFontSize, @fontWeightSemiBold, @baseTextColor);
+		.size(100%, @iconHeight);
+		border: 1px solid @baseBorderColor;
+		border-bottom-width: 0;
+		padding-left: @paddingLarge - 1;
+		line-height: @baseLineHeight;
+		zoom: 1;
+
+		.z-groupbox-title {
+			white-space: nowrap;
+
+			&-content {
+				display: inline-block;
+			}
+		}
+		.z-groupbox-readonly .z-groupbox-title-content {
+			cursor: default;			
+		}
+		.z-caption,
+		.z-groupbox-title {
+			display: inline;
+			padding: 0 @paddingSmall;
+			background: @baseBackground;
+			position: relative;
+			cursor: pointer;
+
+			&-readonly {
+				cursor: default;
+			}
+		}
+		.z-caption-content,
+		.z-label {
+			float: none;
+		}
+	}
+
+	&-content {
+		display: block;
+		height: inherit; // Firefox bug: content cant be collapsed when scrolling
+		border: 1px solid @baseBorderColor;
+		border-top-width: 0;
+		padding: @paddingSmall @paddingSmall - 1 @paddingSmall - 1;
+		overflow: hidden;
+		zoom: 1;
+	}
+
+	&-notitle {
+		padding: 0;
+
+		.z-groupbox-content {
+			border-top-width: 1px;
+			padding-top: @paddingSmall - 1;
+		}
+	}
+
+	&-collapsed .z-groupbox-header {
+		border-left-color: transparent;
+		border-right-color: transparent;
+	}
+
+	&-3d {
+		padding: 0;
+
+		> .z-groupbox-header {
+			height: auto;
+			min-height: @barHeight;
+			border-bottom-width: 1px;
+			padding: @paddingSmall - 1;
+			background: @groupBackground;
+
+			.z-caption,
+			.z-groupbox-title {
+				display: inline-block;
+				width: 100%;
+				padding: 0;
+				line-height: @barHeight - @paddingSmall * 2;
+				background: none;
+			}
+		}
+	}
+}
+
+.ie8 .z-groupbox-3d > .z-groupbox-header {
+	min-height: @barHeight - @paddingSmall * 2;
+}

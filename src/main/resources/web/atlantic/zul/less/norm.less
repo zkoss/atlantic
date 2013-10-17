@@ -1,0 +1,565 @@
+@import "~./atlantic/zul/less/_header.less";
+@import "~./zul/less/_reset.less";
+// Font-Awesome 3.1.1
+@import "~./zul/less/font/_all.less";
+// Google Font
+@import ~"url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700)";
+
+html, body {
+	height: 100%;
+}
+
+// affect ZK component only
+[class^="z-"],
+[class*=" z-"],
+[class^="z-"]:after,
+[class*=" z-"]:after,
+[class^="z-"]:before,
+[class*=" z-"]:before,
+.z-borderbox {
+	.applyCSS3('box-sizing', 'border-box');
+}
+
+// Reset
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input,
+input:focus,
+textarea,
+textarea:focus {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	 outline: none;
+	 -webkit-user-select: text;
+}
+
+*:focus {
+  outline: none;
+}
+
+fieldset {
+	border: 1px solid @baseBorderColor;
+	.borderRadius(0);
+	margin: 0 2px; 
+	padding: 0;
+}
+
+legend {
+	border: 0;
+	padding: 0; 
+}
+
+<c:if test="${zk.gecko > 0}">
+button::-moz-focus-inner {
+	border: 0;
+}
+</c:if>
+<c:if test="${empty c:property('org.zkoss.zul.theme.browserDefault')}">
+body {
+	margin: 0;
+	padding: 0 5px;
+}
+</c:if>
+
+//mobile
+.mobile * {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+//ZK JavaScript Error Message Box
+.z-error {
+	display: none;
+	width: 450px;
+	border: 1px solid @errorboxBorderColor;
+	padding: @paddingSize;
+	background: @errorboxBackground;
+	position: absolute;
+	top: 0;
+	left: 40%;
+	z-index: 9999999;
+
+	.messages {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @errorboxColor);
+		word-wrap: break-word;
+		overflow: auto;
+	}
+	.newmessage {
+		display: none;
+		background: @errorboxBackground;
+	}
+	.button {
+		color: @errorboxColor;
+		.size(@smallIconWidth, @smallIconHeight);
+		margin-left: @paddingSmall;
+		text-align: right;
+		cursor: pointer;
+		float: right;
+
+		> .z-icon-remove {
+			font-size: @fontSizeXLarge;
+		}
+	}
+	#zk_err-p {
+		height: @iconHeight;
+		cursor: move;
+	}
+	.errornumbers {
+		.fontStyle(@contentFontFamily, @baseFontSize, @fontWeightBold, @errorboxColor);
+		float: left;
+	}
+}
+
+//zk.log box
+.z-log {
+	width: 50%;
+	text-align: right;
+	position: absolute;
+	right: 10px;
+	bottom: 5px;
+	z-index: 99000;
+
+	textarea {
+		width: 100%;
+		border-color: @baseBorderColor;
+	}
+	button {
+		font-size: @fontSizeSmall;
+		min-height: 24px;
+	}
+}
+
+//General
+.noscript { //the content of noscript
+	.size(100%, 100%);
+	background: #E0E1E3;
+	.opacity(0.6);
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 32000;
+	zoom: 1;
+
+	p {
+		font-weight: bold;
+		color: black;
+		border: 1px solid black;
+		margin: 10% 15%;
+		padding: 10px 0;
+		background: white;
+		.opacity(1.0);
+	}
+}
+
+//radio, radiogroup
+input[type="radio"] {
+	-webkit-appearance: radio;
+	-moz-appearance: radio;
+	margin: 0 2px 4px;
+}
+input[type="checkbox"] {
+	-webkit-appearance: checkbox;
+	-moz-appearance: checkbox;
+	margin: 0 2px 4px;
+}
+
+//label radio checkbox
+.z-radio-content,
+.z-checkbox-content {
+	font-weight: @baseFontWeight;
+	line-height: normal;
+}
+.z-label,
+.z-radio-content,
+.z-checkbox-content {
+	font-family: @contentFontFamily;
+	font-size: @baseFontSize;
+}
+
+//loading
+.z-loading,
+.z-apply-loading {
+	border: 1px solid @baseBorderColor;
+	padding: @paddingSmall - 1;
+	background: @loadingBackground;
+	position: absolute;
+	cursor: wait;
+	white-space: nowrap;
+}
+.z-loading {
+	.fontStyle(@contentFontFamily, @loadingFontSize, @fontWeightLight, @loadingColor);
+	left: 0;
+	top: 0;
+	z-index: 31000;
+
+	&-indicator {
+		padding: 6px;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+	&-icon {
+		.displaySize(block, 48px, 48px);
+		margin-left: -24px;
+		background: transparent no-repeat center;
+		.encodeThemeURL(background-image, '~./zul/img/misc/progress-large.gif');
+		position: relative;
+		left: 50%;
+	}
+}
+.z-apply-loading {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+	overflow: hidden;
+	z-index: 89500;
+
+	&-indicator {
+		padding: 2px;
+		white-space: nowrap;
+	}
+	&-icon {
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+.z-apply-loading-icon,
+.z-renderdefer {
+	.size(16px, 16px);
+	background: transparent no-repeat center;
+	.encodeThemeURL(background-image, '~./zul/img/misc/progress.gif');
+}
+.z-temp,
+.z-modal-mask,
+.z-apply-mask {
+	.size(100%, 100%);
+	background: @maskBackground;
+	.opacity(0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.z-apply-mask {
+	z-index: 89000;
+}
+.z-initing {
+	.size(60px, 60px);
+	background: transparent no-repeat center;
+	background-image: url('http://www.zkoss.org/zk/img/${z:encodeWithZK("zkpowered.png")}');
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	z-index: 32000;
+}
+.z-uptime {
+	background-image: url('http://www.zkoss.org/zk/img/${z:encodeWithZK("zkuptime.png")}');
+}
+
+.z-inline-block { //used with label/checkbox and others to ensure the dimension
+	vertical-align: top; //vertical-align: make it looks same in diff browsers
+	display: inline-block;
+}
+.z-word-wrap {
+	word-wrap: break-word;
+}
+.z-word-nowrap {
+	white-space: nowrap;
+}
+.z-overflow-hidden {
+	overflow: hidden;
+}
+.z-dd-stackup {
+	.size(100%, 100%);
+	.encodeURL(background-image, '~./img/spacer.gif');
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 16800;
+}
+
+.z-temp * { //temporary
+	font-size: 5px;
+	color: #FFFFFF;
+	background: #FFFFFF;
+	text-decoration: none;
+}
+.z-temp {
+	.z-loading {
+		background: @loadingBackground;
+		top: 49%;
+		left: 46%;
+	}
+	.z-loading-indicator {
+		font-size: @fontSizeMedium;
+		color: @baseTextColor;
+	}
+}
+
+//Fix float issue for CSS
+.z-clear {
+	font-size: 0;
+	.size(0, 0);
+	line-height: 0;
+	clear: both;
+	overflow: hidden;
+}
+
+//Drag-Drop
+.z-dragged {
+	color: @dragColor;
+	background: none no-repeat scroll 0 0 @dragBackground;
+}
+.z-drag {
+	&-over {
+		background: @dragHoverBackground;
+	}
+	&-ghost {
+		list-style: none;
+	}
+}
+.z-drop {
+	&-allow {
+		background: @dragAllowBackground;
+
+		.z-drop-icon {
+			color: @dragAllowBackground;
+		}
+	}
+	&-disallow {
+		background: @dragDisAllowBackground;
+
+		.z-drop-icon {
+			color: @dragDisAllowBackground;
+		}
+	}
+	&-content {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @dragColor);
+		.size(120px, @buttonHeight);
+		padding: @paddingSmall;
+		padding-left: @smallIconWidth + @paddingSize; // for icon
+		line-height: @buttonHeight - @paddingSmall * 2;
+		position: relative;
+	}
+	&-icon {
+		font-size: @iconSize;
+		.size(@smallIconWidth, @smallIconHeight);
+		.borderRadius(@smallIconWidth / 2);
+		line-height: @smallIconHeight;
+		background: @baseBackground;
+		text-align: center;
+		position: absolute;
+		top: @paddingSize;
+		left: @paddingSize;
+	}
+}
+
+// Focus Anchor
+.z-focus-a {
+	font-size: 0 !important;
+	.size(1px, 1px) !important;
+	border: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	line-height: 0 !important;
+	background: transparent !important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	-moz-outline: 0 none;
+	outline: 0 none;
+	-moz-user-select: text;
+	-khtml-user-select: text;
+	overflow: hidden;
+
+	&:focus {
+		-moz-outline: 0 none;
+		outline: 0 none;
+	}
+}
+
+//upload button
+span.z-upload {
+	font-size: 0;
+	.displaySize(inline-block, 0, 0);
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+span.z-upload input {
+	font-size: 45pt;
+	margin: 0;
+	padding: 0;
+	.opacity(0);
+	position: absolute;
+	cursor: pointer;
+	z-index: 1;
+}
+.z-upload-icon {
+	.encodeThemeURL(background-image, '~./zul/img/misc/prgmeter.png');
+	overflow: hidden;
+}
+
+//fileupload dialog
+.z-fileupload-add,
+.z-fileupload-remove {
+	color: #1096BC;
+	.size(16px, 17px);
+	cursor: pointer;
+}
+.z-fileupload-progress {
+	width: 300px;
+}
+.z-fileupload-manager {
+	width: 350px;
+}
+
+//Selectbox
+.z-selectbox {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+}
+
+//scrollbar
+.z-scrollbar {
+	display: none;
+	.opacity(0);
+	position: absolute;
+
+	//vertical
+	&-vertical {
+		.size(@scrollbarWidth, 100%);
+		top: 0;
+		right: 0;
+
+		.z-scrollbar {
+			&-wrapper {
+				width: 100%;
+				position: absolute;
+				top: @scrollbarHeight;
+				left: 0;
+			}
+			&-indicator {
+				width: @scrollbarWidth - 2;
+				border: 1px solid @scrollbarBorderColor;
+				background: @scrollbarBackground;
+				position: absolute;
+				left: 1px;
+				cursor: pointer;
+				z-index: 100;
+			}
+			&-rail {
+				.size(100%, 100%);
+			    background: @scrollbarRailBackground;
+			}
+			&-icon {
+				color: @iconColor;
+				display: @scrollbarIconDisplay;
+				margin-top: -8px;
+				position: absolute;
+				left: -1px;
+				top: 50%;
+				.transform('scale(0.5, 0.7)');
+			}
+		}
+		&-embed {
+			.size(@scrollbarWidth / 2, 100%);
+			background: #000000;
+			.opacity(0.2);
+			position: absolute;
+			top: 0;
+			right: 0;
+			.boxShadow('inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07)');
+		}
+	}
+	&-up,
+	&-down {
+		.iconFontStyle(@baseFontSize, @scrollbarButtonColor);
+		.size(@scrollbarWidth, @scrollbarHeight);
+		background: @scrollbarButtonBackground;
+		position: absolute;
+		cursor: pointer;
+
+		&:hover {
+			color: @scrollbarButtonHoverColor;
+			background: @scrollbarButtonHoverBackground;
+		}
+	}
+	&-up {
+		> .z-icon-caret-up:before {
+			position: absolute;
+			left: 4px;
+			top: -1px;
+		}
+	}
+	&-down {
+		bottom: 0;
+		> .z-icon-caret-down:before {
+			position: absolute;
+			left: 4px;
+			top: 1px;
+		}
+	}
+
+	//horizontal
+	&-horizontal {
+		.size(100%, @scrollbarHeight);
+		left: 0;
+		bottom: 0;
+
+		.z-scrollbar {
+			&-wrapper {
+				height: 100%;
+				position: absolute;
+				left: @scrollbarWidth;
+				bottom: 0;
+			}
+			&-indicator {
+				height: @scrollbarHeight - 2;
+				border: 1px solid @scrollbarBorderColor;
+				background: @scrollbarBackground;
+				position: absolute;
+				top: 1px;
+				cursor: pointer;
+				z-index: 100;
+			}
+			&-rail {
+				.size(100%, 100%);
+			    background: @scrollbarRailBackground;
+			}
+			&-icon {
+				color: @iconColor;
+				display: @scrollbarIconDisplay;
+				margin-left: -8px;
+				position: absolute;
+				left: 50%;
+				top: -2px;
+				.transform('rotate(90deg) scale(0.5, 0.7)');
+			}
+		}
+		&-embed {
+			.size(100%, @scrollbarHeight / 2);
+			background: #000000;
+			.opacity(0.2);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			.boxShadow('inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07)');
+		}
+	}
+	&-left,
+	&-right {
+		.iconFontStyle(@baseFontSize, @scrollbarButtonColor);
+		.size(@scrollbarWidth, @scrollbarHeight);
+		padding: 1px 6px 0 5px;
+		background: @scrollbarButtonBackground;
+		position: absolute;
+		cursor: pointer;
+
+		&:hover {
+			color: @scrollbarButtonHoverColor;
+			background: @scrollbarButtonHoverBackground;
+		}
+	}
+	&-right {
+		right: 0;
+	}
+}

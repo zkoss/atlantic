@@ -59,6 +59,11 @@
 	</dependencies>
 	<build>
 		<testOutputDirectory>${project.build.directory}/classes</testOutputDirectory>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<!-- Compile LESS -->
 			<plugin>
@@ -80,9 +85,8 @@
 							</executableDependency>
 							<mainClass>org.zkoss.maven.CpLess</mainClass>
 							<arguments>
-								<argument>${project.basedir}/src/main/less-sources</argument>
 								<argument>${project.basedir}/src/main/resources</argument>
-								<argument>atlantic</argument>
+								<argument>${project.basedir}/src/main/resources</argument>
 							</arguments>
 						</configuration>
 					</execution>

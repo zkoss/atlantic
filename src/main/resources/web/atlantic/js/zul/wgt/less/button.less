@@ -1,0 +1,43 @@
+@import "~./atlantic/zul/less/_header.less";
+
+.z-button {
+	.fontStyle(@contentFontFamily, @baseFontSize, @fontWeightSemiBold, @buttonColor);
+	min-height: @buttonHeight;
+	border: 1px solid @buttonBorderColor;
+	padding: @paddingSmall - 1 @paddingLarge - 1;
+	line-height: @buttonHeight - @paddingSmall * 2;
+	background: @buttonBackground;
+	cursor: pointer;
+	white-space: nowrap;
+
+	&:hover {
+		color: @hoverColor;
+		border-color: @hoverBorderColor;
+		background: @hoverBackground;
+		.boxShadow(inset 0 -1px 0 @hoverShadowColor);
+	}
+	&:focus {
+		color: @focusColor;
+		border-color: @focusBorderColor;
+		background: @focusBackground;
+		.boxShadow(none);
+	}
+	&:active {
+		color: @activeColor;
+		border-color: @activeBorderColor;
+		background: @activeBackground;
+		.boxShadow(inset 0px 1px 0 @activeShadowColor);
+	}
+	&[disabled] {
+		color: @disabledColor;
+		border: 1px solid @disabledBorderColor;
+		background: @disabledBackground;
+		.opacity(@disabledOpacity);
+		.boxShadow(none);
+		cursor: default;
+	}
+}
+
+.ie8 .z-button {
+	min-height: @buttonHeight - @paddingSmall * 2;
+}

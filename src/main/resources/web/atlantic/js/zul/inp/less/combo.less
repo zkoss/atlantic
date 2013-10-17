@@ -1,0 +1,269 @@
+@import "~./atlantic/zul/less/_header.less";
+
+.z-combobox,
+.z-bandbox,
+.z-datebox,
+.z-timebox,
+.z-spinner,
+.z-doublespinner {
+	display: inline-block;
+	min-height: @buttonHeight;
+	line-height: normal; //reset for inside other component
+	white-space: nowrap;
+	clear: both;
+
+	&-input {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @inputColor);
+		height: @buttonHeight;
+		border: 1px solid @inputBorderColor;
+		border-right-width: 0;
+		margin: 0;
+		padding: @paddingSmall - 1 @paddingSize - 1;
+		line-height: @buttonHeight - @paddingSmall * 2;
+		background: @inputBackground;
+
+		&:focus {
+			border-color: @focusBorderColor;
+		}
+		&[readonly] {
+			border-color: @readonlyBorderColor;
+			background: @readonlyBackground;
+		}
+	}
+
+	&-button {
+		.displaySize(inline-block, @buttonWidth, @buttonHeight);
+		border: 1px solid @inputBorderColor;
+		background: @inputBackground;
+		vertical-align: middle;
+		cursor: pointer;
+		overflow: hidden;
+
+		&:hover {
+			border-color: @hoverBorderColor;
+			background: @hoverBackground;
+		}
+		&:active {
+			border-color: @activeBorderColor;
+			background: @activeBackground;
+		}
+		input[disabled] + & {
+			&:hover,
+			&:active {
+				border-color: @inputBorderColor;
+				background: 0;
+			}
+		}
+	}
+
+	&-icon {
+		.iconFontStyle(@baseFontSize, @baseTextColor);
+		display: block !important;
+		width: @buttonWidth - 1; //minus border width
+		line-height: @buttonHeight - 2; //minus border width
+		text-align: center;
+		
+		&:hover {
+			color: @hoverColor;
+		}
+		&:active {
+			color: @activeColor;
+		}
+	}
+
+	&-disabled {
+		.opacity(@disabledOpacity);
+		& * {
+			color: @inputDisabledColor !important;
+			background: @inputDisabledBackground !important;
+			cursor: default !important;
+		}
+	}
+
+	&-invalid {
+		border: 1px solid @invalidBorderColor !important;
+		margin-right: -1px;
+		background: @invalidBackground;
+	}
+
+	&-readonly:focus {
+		border-right-width: 0;
+		border-color: @readonlyBorderColor;
+		background: transparent repeat-x 0 0;
+		cursor: default;
+	}
+
+	&-rightedge {
+		border-right: 1px solid @inputBorderColor;
+	}
+}
+
+.z-combobox-button.z-combobox-disabled,
+.z-bandbox-button.z-bandbox-disabled,
+.z-datebox-button.z-datebox-disabled,
+.z-timebox-button.z-timebox-disabled,
+.z-spinner-button.z-spinner-disabled,
+.z-doublespinner-button.z-doublespinner-disabled {
+	display: none;
+}
+
+.z-combobox-button {
+	font-size: @fontSizeLarge;
+}
+
+.z-spinner-button,
+.z-doublespinner-button {
+	padding: 0;
+
+	&:hover,
+	&:active {
+		border-color: @baseBorderColor;
+		background: 0;
+	}
+
+	> a {
+		line-height: @buttonHeight / 2 - 1;
+		background: @baseBackground;
+
+		&:hover {
+			color: @hoverColor;
+			background: @hoverBackground;
+		}
+		&:active {
+			color: @activeColor;
+			background: @activeBackground;
+		}
+	}
+	// separator
+	> i {
+		z-index: 2; // greater than arrow icon
+	}
+	&:hover > i {
+		.size(@buttonWidth - 1, 1px); //minus border width
+		border-top: 1px solid @hoverBorderColor;
+		position: absolute;
+		top: @buttonHeight / 2 - 1; // middle place
+		left: 0;
+	}
+}
+
+.z-spinner-disabled a,
+.z-doublespinner-disabled a {
+	&:active,
+	&:hover {
+		background: 0;
+	}
+	// separator
+	& + i[class*='-separator'] {
+		display: none;
+	}
+}
+
+// Inplace editing
+.z-combobox-inplace .z-combobox-input,
+.z-bandbox-inplace .z-bandbox-input,
+.z-datebox-inplace .z-datebox-input,
+.z-timebox-inplace .z-timebox-input,
+.z-spinner-inplace .z-spinner-input,
+.z-doublespinner-inplace .z-doublespinner-input {
+	padding: @paddingSmall + 1;
+	border: 0;
+	background: none;
+
+	&:focus {
+		background: 0;
+	}
+}
+.z-combobox-inplace .z-combobox-button,
+.z-bandbox-inplace .z-bandbox-button,
+.z-datebox-inplace .z-datebox-button,
+.z-timebox-inplace .z-timebox-button,
+.z-spinner-inplace .z-spinner-button,
+.z-doublespinner-inplace .z-doublespinner-button {
+	display: none;
+}
+
+// Comboitem
+.z-comboitem {
+	display: block;
+	padding: @paddingSmall @paddingSize;
+	line-height: @buttonHeight - @paddingSmall * 2;
+	position: relative;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.z-comboitem-inner,
+.z-comboitem-content { //description
+	color: @baseTextColor;
+	font-size: @fontSizeSmall;
+}
+.z-comboitem,
+.z-comboitem a,
+.z-comboitem a:visited {
+	color: @baseTextColor;
+	text-decoration: none;
+}
+.z-comboitem-selected {
+	color: @selectedColor;
+	background: @selectedBackground;
+	
+	.z-comboitem-inner,
+	.z-comboitem-content {
+		color: @selectedColor;
+	}
+}
+.z-comboitem:hover {
+	color: @hoverColor;
+	background: @hoverBackground;
+	
+	.z-comboitem-inner,
+	.z-comboitem-content {
+		color: @hoverColor;
+	}
+}
+.z-comboitem-selected:hover {
+	color: @selectedHoverColor;
+	background: @selectedHoverBackground;
+	
+	.z-comboitem-inner,
+	.z-comboitem-content {
+		color: @selectedHoverColor;
+	}
+}
+.z-comboitem-image {
+	margin-right: @paddingSmall;
+	&:empty {
+		margin-right: 0;
+	}
+}
+
+.z-combobox-popup,
+.z-bandbox-popup,
+.z-datebox-popup,
+.z-timebox-popup {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+	display: block;
+	border: 1px solid @baseBorderColor;
+	background: @baseBackground;
+	position: absolute;
+	overflow: hidden;
+}
+
+.z-combobox-popup {
+	overflow: auto;
+}
+
+.z-bandbox-popup {
+	overflow: auto;
+}
+
+.z-combobox-content {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	background: transparent none repeat 0 0;
+	position: relative;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}

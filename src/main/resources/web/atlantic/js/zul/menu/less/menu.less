@@ -1,0 +1,313 @@
+@import "~./atlantic/zul/less/_header.less";
+
+.hover() {
+	color: @menuHoverColor;
+	background: @menuHoverBackground;
+}
+.popupHover() {
+	color: @menuPopupHoverColor;
+	background: @menuPopupHoverBackground;
+}
+.active() {
+	color: @menuActiveColor;
+	background: @menuActiveBackground;
+}
+.popupActive() {
+	color: @menuPopupActiveColor;
+	background: @menuPopupActiveBackground;
+}
+.restUl() {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	background: transparent none repeat 0 0;
+	position: relative;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+// menubar
+.z-menubar {
+	display: block;
+	background: @menuBackground;
+	position: relative;
+	
+    //cave
+	ul {
+		overflow: hidden;
+		.restUl();
+	}
+	//menu and menuitem
+	li {
+		display: block;
+		padding: 0;
+		position: relative;
+	}
+
+	// horizontal orient
+	&-horizontal {
+		li {
+			margin-right: 2px;
+			float: left;
+		}
+		.z-menuseparator {
+			width: 1px;
+			border-left: 1px solid @menuSeparatorBorderColor;
+			line-height: @headerHeight;
+		}
+	}
+	// vertical orient
+	&-vertical {
+		ul {
+			display: table;
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		.z-menuseparator {
+			height: 0;
+			border-top: 1px solid @menuSeparatorBorderColor;
+			line-height: 0;
+		}
+	}
+}
+
+// normal content
+.z-menu,
+.z-menuitem {
+	.restUl(); //avoid using none default zclass
+	
+	&-content {
+		.fontStyle(@titleFontFamily, @fontSizeLarge, @baseFontWeight, @menuColor);
+		display: block;
+		min-height: @headerHeight;
+		border: 1px solid transparent;
+		padding: (@headerHeight - @iconHeight - 2)/2 @paddingSize - 1; //remain @iconHeight(24px) inside, total @headerHeight(48px)
+		line-height: @headerHeight - @iconHeight;
+		position: relative;
+		cursor: pointer;
+		text-decoration: none;
+		white-space: nowrap;
+		z-index: 20; // the 20 is greater than menupopup-separator's z-index
+		&:active {
+			.active();
+		}
+		&[disabled],
+		&[disabled]:hover {
+			color: @menuDisabledColor;
+			background: none;
+			.opacity(@disabledOpacity);
+			cursor: default;
+		}
+	}
+	&-image {
+		min-width: @menuImageSize;
+		min-height: @menuImageSize;
+		vertical-align: text-top;
+		position: relative;
+		top: 2px;
+	}
+	&-text {
+		margin: 0 2px;
+	}
+}
+
+// menu
+.z-menu {
+	&-separator {
+		display: none;
+	}
+	&-clickable {
+		.z-menu-separator {
+			.size(1px, 100%);
+			background: @hoverBorderColor;
+			position: absolute;
+			top: 0;
+			right: 16px;
+		}
+		&.z-menu:hover .z-menu-separator {
+			display: block;
+		}
+		&.z-menu:active,
+		&.z-menu-selected {
+			.z-menu-separator {
+				background: @menuSeparatorBackground;
+			}
+		}
+		.z-menu-text {
+			margin-right: 3px;
+		}
+	}
+	&-content {
+		padding-right: @paddingLarge - 1;
+	}
+	&-icon {
+		color: @menuColor;
+		position: absolute;
+		top: @iconHeight / 2;
+		right: 5px;
+	}
+	&-hover {
+		> .z-menu-content,
+		.z-menu-icon {
+			.hover();
+		}
+	}
+	&-selected > &-content,
+	&-selected &-icon {
+		.active();
+	}
+}
+
+// menuitem
+.z-menuitem {
+	&-content:hover {
+		.hover();
+	}
+	&-selected > &-content {
+		.active();
+	}
+}
+
+// menupopup
+.z-menu-content-popup {
+	.displaySize(none, auto, auto);
+	position: absolute;
+	overflow: auto;
+	z-index: @basePopupZIndex;
+}
+.z-menupopup {
+	padding: @paddingSmall;
+	background: @baseBackground;
+	z-index: @basePopupZIndex;
+	left: 0;
+	top: 0;
+	white-space: nowrap;
+
+	ul {
+		.restUl();
+	}
+	&-separator {
+		.size(2px, 100%);
+		border-width: 3px 1px 3px 0;
+		border-style: solid;
+		border-color: @menuPopupSeparatorBorder;
+		background: @menuPopupSeparatorBackground;
+		position: absolute;
+		top: 0;
+		left: 31px;
+		z-index: 10;
+	}
+	.z-menu,
+	.z-menuitem {
+		background: @menuPopupBackground;
+		&-content {
+			.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @menuPopupColor);
+			min-height: @barHeight;
+			padding: (@barHeight - @iconHeight - 2)/2 @paddingSize - 1; //remain @iconHeight(24px) inside, total @barHeight(40px)
+			padding-right: @paddingLarge - 1;
+		}
+		&-image {
+			margin-right: 9px;
+		}
+		&-content {
+			&[disabled],
+			&[disabled]:hover {
+				color: @disabledColor;
+				background: @disabledBackground;
+				.opacity(@disabledOpacity);
+				cursor: default;
+			}
+		}
+	}
+	.z-menu-icon {
+		color: @menuPopupColor;
+		line-height: normal;
+	}
+	.z-menu-content:hover,
+	.z-menu-content:hover .z-menu-icon,
+	.z-menuitem-content:hover {
+		.popupHover();
+	}
+	.z-menuitem-icon {
+		.iconFontStyle(@checkedFontSize, @checkedColor);
+		display: none;
+		line-height: @checkedSize - 2;
+		position: absolute;
+		left: @checkedSize/2;
+		top: @checkedSize/2;
+	}
+	.z-menuseparator {
+		font-size: 1px;
+		display: block;
+		width: auto;
+		min-height: 2px;
+		border-bottom: 1px solid @menuPopupSeparatorBorder;
+		padding: 0px;
+		line-height: 1px;
+		background: @menuPopupSeparatorBackground;
+		position: relative;
+	}
+}
+//define checked menuitem effect in menupopup
+.z-menuitem-checkable .z-menuitem-image {
+	.size(@checkedSize, @checkedSize);
+	border: 1px solid @checkedBorderColor;
+	background: @checkedBackground;
+	top: 0;
+}
+.z-menuitem-checked.z-menuitem-checkable .z-menuitem-icon {
+	display: block;
+}
+
+//define menubar hor scroll
+.z-menubar {
+	&-scroll {
+		overflow: hidden;
+	}
+	&-body {
+		width: 100%;
+		margin: 0 @headerWidth;
+		position: relative;
+		overflow: hidden;
+	}
+	&-content {
+		width: 5500px;
+	}
+	&-scrollable {
+		.size(@headerWidth, 100%);
+		border-width: 0 1px;
+		border-style: solid;
+		border-color: @baseBorderColor;
+		line-height: normal;
+		background: @menuBackground;
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		z-index: 25;
+	}
+	&-left,
+	&-right {
+		padding: 5px 11px;
+	}
+	&-left {
+		left: 0;
+		padding: 5px 12px;
+	}
+	&-icon {
+		.iconFontStyle(@iconSize, @menuColor);
+		margin-top: -@iconSize/2;
+		margin-left: -@iconSize/2;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+.ie8 {
+	.z-menu-content,
+	.z-menuitem-content {
+		min-height: @iconHeight;
+	}
+}

@@ -215,6 +215,9 @@
 		}
 	}
 }
+.z-nav-text {
+	padding-right: @iconWidth + @paddingSize;
+}
 .z-nav-content:before {
 	content: '';
 	display: none;
@@ -280,6 +283,13 @@
 		> .z-navitem > .z-navitem-content:hover .z-navitem-text {
 			color: @navColor;
 		}
+		> .z-nav > .z-nav-content .z-nav-info {
+			display: inline-block;
+			margin-left: @paddingSmall;
+			position: relative;
+			top: 0;
+			right: 0;
+		}
 		ul { //second level
 			display: none;
 			min-width: 180px;
@@ -325,7 +335,7 @@
 }
 .z-navbar-vertical.z-navbar-collapsed {
 	> ul { //topmost level
-		width: @navCollapsedWidth;
+		min-width: @navCollapsedWidth;
 	}
 }
 .z-nav-popup { //equal to second level

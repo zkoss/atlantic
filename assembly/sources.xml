@@ -13,7 +13,10 @@
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.basedir}/src/main/less-sources</directory>
+			<directory>${project.basedir}/src/main/resources</directory>
+			<includes>
+				<include>**/*.less</include>
+			</includes>
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
 	</fileSets>

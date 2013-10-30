@@ -18,3 +18,5 @@ Usage:
 			zktheme=atlantic
 
 It does not require a server restart, but user has to refresh the browser.
+
+Refer to this [blog](http://blog.zkoss.org/index.php/2013/10/22/zk-7-introduces-atlantic-theme-a-new-flat-design/) for more information about the theme.

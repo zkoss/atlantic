@@ -24,10 +24,12 @@
 
 		&:focus {
 			border-color: @focusBorderColor;
+			.boxShadow(inset -1px 0 0 @focusBorderColor);
 		}
 		&[readonly] {
 			border-color: @readonlyBorderColor;
 			background: @readonlyBackground;
+			.boxShadow(none);
 		}
 	}
 
@@ -42,10 +44,18 @@
 		&:hover {
 			border-color: @hoverBorderColor;
 			background: @hoverBackground;
+			
+			> i {
+				color: @hoverColor;
+			}
 		}
 		&:active {
 			border-color: @activeBorderColor;
 			background: @activeBackground;
+			
+			> i {
+				color: @activeColor;
+			}
 		}
 		input[disabled] + & {
 			&:hover,
@@ -59,16 +69,9 @@
 	&-icon {
 		.iconFontStyle(@baseFontSize, @baseTextColor);
 		display: block !important;
-		width: @buttonWidth - 1; //minus border width
+		width: @buttonWidth - 2; //minus border width
 		line-height: @buttonHeight - 2; //minus border width
 		text-align: center;
-		
-		&:hover {
-			color: @hoverColor;
-		}
-		&:active {
-			color: @activeColor;
-		}
 	}
 
 	&-disabled {
@@ -84,6 +87,7 @@
 		border: 1px solid @invalidBorderColor !important;
 		margin-right: -1px;
 		background: @invalidBackground;
+		.boxShadow(inset -1px 0 0 @invalidBorderColor);
 	}
 
 	&-readonly:focus {
@@ -111,9 +115,11 @@
 	font-size: @fontSizeLarge;
 }
 
+.z-timebox-button,
 .z-spinner-button,
 .z-doublespinner-button {
 	padding: 0;
+	position: relative;
 
 	&:hover,
 	&:active {
@@ -147,6 +153,7 @@
 	}
 }
 
+.z-timebox-disabled a,
 .z-spinner-disabled a,
 .z-doublespinner-disabled a {
 	&:active,

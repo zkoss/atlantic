@@ -44,6 +44,7 @@
 	display: block;
 	position: relative;
 	white-space: nowrap;
+	overflow: hidden;
 	ul {
 		.restUl();
 	}
@@ -335,6 +336,7 @@
 }
 .z-navbar-vertical.z-navbar-collapsed {
 	> ul { //topmost level
+		display: inline-block;
 		min-width: @navCollapsedWidth;
 	}
 }

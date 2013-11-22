@@ -42,8 +42,8 @@ input[type=radio] {
 			content: '';
 			.size(@checkedSize / 2, @checkedSize / 2);
 			.borderRadius(@checkedSize / 4);
-			margin-top: -@checkedSize / 2;
-			margin-left: -@checkedSize / 2;
+			margin-top: -@checkedSize / 4;
+			margin-left: -@checkedSize / 4;
 			background: @checkedColor;
 			position: absolute;
 			top: 50%;
@@ -354,6 +354,19 @@ li.z-timebox-wheel-list-selected {
 		&-footer {
 			height: 40px;
 		}
+	}
+}
+
+//Groupbox
+.z-groupbox {
+	> .z-groupbox-header {
+		.z-caption-readonly,
+		.z-groupbox-title-readonly {
+			cursor: pointer;
+		}
+	}
+	> .z-groupbox-readonly .z-groupbox-title {
+		cursor: pointer;
 	}
 }
 

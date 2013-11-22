@@ -37,23 +37,23 @@
 			background: @tabHoverBackground;
 		}
 	}
-	&-left,
-	&-right {
+	&-left-scroll,
+	&-right-scroll {
 		width: @headerWidth;
 	}
-	&-right {
+	&-right-scroll {
 		right: 0;
 	}
-	&-up,
-	&-down {
+	&-up-scroll,
+	&-down-scroll {
 		height: @headerHeight;
 	}
-	&-down {
+	&-down-scroll {
 		top: auto;
 		bottom: 0;
 	}
-	// horizontal (default)
-	&-horizontal {
+	// top (default)
+	&-top {
 		.z-tabs-content {
 			border-bottom: 1px solid @baseBorderColor;
 		}
@@ -75,8 +75,8 @@
 			padding: @paddingSize @paddingSize @paddingSize - 1;
 		}
 	}
-	// horizontal-bottom
-	&-horizontal-bottom {
+	// bottom
+	&-bottom {
 		.z-tabs-content {
 			border-top: 1px solid @baseBorderColor;
 		}
@@ -104,8 +104,8 @@
 			bottom: 0;
 		}
 	}
-	// vertical
-	&-vertical {
+	// left
+	&-left {
 		.z-tabs {
 			float: left;
 	
@@ -143,8 +143,8 @@
 		}
 	}
 
-	// vertical-right
-	&-vertical-right {
+	// right
+	&-right {
 		.z-tabs {
 			float: right;
 			
@@ -231,8 +231,11 @@
 				.opacity(@disabledOpacity);
 				cursor: default;
 
-				.z-tab-button:hover {
-					.opacity(@disabledOpacity);
+				.z-tab-button {
+					color: @disabledColor;
+					&:hover {
+						.opacity(@disabledOpacity);
+					}
 				}
 
 				.z-tab-text {
@@ -264,7 +267,6 @@
 
 .z-tab {
 	display: block;
-	min-height: @headerHeight;
 	border: 1px solid @baseBorderColor;
 	padding: @paddingSize - 1;
 	line-height: @headerHeight - @paddingSize * 2;
@@ -346,11 +348,13 @@
 		&:hover {
 			background: @disabledBackground;
 		}
-		.z-tab-button:hover {
-			color: @disabledColor;
-			background: @disabledBackground;
-			.opacity(@disabledOpacity);
-			cursor: default;
+		.z-tab-button {
+			&, &:hover {
+				color: @disabledColor;
+				background: @disabledBackground;
+				.opacity(@disabledOpacity);
+				cursor: default;
+			}
 		}
 		.z-tab-text {
 			color: @disabledColor;

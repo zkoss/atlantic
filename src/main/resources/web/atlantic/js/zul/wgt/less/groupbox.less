@@ -19,9 +19,6 @@
 				display: inline-block;
 			}
 		}
-		.z-groupbox-readonly .z-groupbox-title-content {
-			cursor: default;			
-		}
 		.z-caption,
 		.z-groupbox-title {
 			display: inline;
@@ -39,7 +36,11 @@
 			float: none;
 		}
 	}
-
+	
+	> .z-groupbox-readonly .z-groupbox-title {
+		cursor: default;
+	}
+	
 	&-content {
 		display: block;
 		height: inherit; // Firefox bug: content cant be collapsed when scrolling

@@ -1,5 +1,8 @@
 	--------
-atlantic 0.8.0-SNAPSHOT
+Atlantic 1.0.0
+Nov 26 2013
 * Features:
+Support ZK 7.0.0
+
 * Bugs:
 * Upgrade Notes:

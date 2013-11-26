@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.zkoss.theme</groupId>
 	<artifactId>atlantic</artifactId>
-	<version>0.8.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<properties>
-		<zk.version>7.0.0-SNAPSHOT</zk.version>
+		<zk.version>7.0.0</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
-		<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
+		<packname>-${project.version}</packname>
 	</properties>
 	<packaging>jar</packaging>
 	<name>The atlantic Theme</name>
@@ -24,6 +24,11 @@
 			<id>ZK CE</id>
 			<name>ZK CE Repository</name>
 			<url>http://mavensync.zkoss.org/maven2</url>
+		</repository>
+		<repository>
+			<id>ZK EE Eval</id>
+			<name>ZK EE Eval Repository</name>
+			<url>http://mavensync.zkoss.org/eval/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
@@ -56,7 +61,7 @@
 			<plugin>
 				<groupId>org.zkoss.maven</groupId>
 				<artifactId>zkless-engine-maven-plugin</artifactId>
-				<version>0.8.2</version>
+				<version>0.8.3</version>
 				<executions>
 					<execution>
 						<id>compile-less</id>
@@ -102,27 +107,6 @@
 					</instructions>
 				</configuration>
 			</plugin>
-			<!-- Build javadoc -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.7</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<configuration>
-							<encoding>UTF-8</encoding>
-							<charset>UTF-8</charset>
-							<reportOutputDirectory>${project.basedir}/target/javadoc</reportOutputDirectory>
-							<destDir>atlantic</destDir>
-							<show>protected</show>
-						</configuration>
-						<goals>
-							<goal>javadoc</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			<!-- Pack zips -->
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -138,19 +122,6 @@
 						<configuration>
 							<descriptors>
 								<descriptor>assembly/sources.xml</descriptor>
-							</descriptors>
-						</configuration>
-					</execution>
-					<!-- Build javadoc.jar -->
-					<execution>
-						<id>javadoc</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptors>
-								<descriptor>assembly/javadoc.xml</descriptor>
 							</descriptors>
 						</configuration>
 					</execution>
@@ -200,40 +171,5 @@
 				</executions>
 			</plugin>
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.apache.maven.plugins
-										</groupId>
-										<artifactId>
-											maven-antrun-plugin
-										</artifactId>
-										<versionRange>
-											[1.7,)
-										</versionRange>
-										<goals>
-											<goal>run</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 </project>

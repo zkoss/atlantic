@@ -1,0 +1,365 @@
+@import "~./atlantic/zul/less/_header.less";
+
+//reset table
+.resetTable() {
+	table {
+		border-spacing: 0;
+		th, td {
+			background-clip: padding-box;
+			padding: 0;
+		}
+		th {
+			text-align: inherit;
+		}
+	}
+}
+
+//listbox
+.z-listbox {
+	border: 1px solid @baseBorderColor;
+	overflow: hidden;
+	zoom: 1;
+	//listbox header
+	&-header {
+		width: 100%;
+		background: @meshTitleBackground;
+		overflow: hidden;
+		.resetTable();
+	}
+	&-header-border {
+		border-bottom: 1px solid @baseBorderColor;
+		margin-top: -1px;
+		position: relative;
+	}
+	//listbox body
+	&-body {
+		position: relative;
+		overflow: hidden;
+		.resetTable();
+	}
+	&-emptybody td {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @meshEmptyColor);
+		font-style: italic;
+		padding: @paddingSmall @paddingSize !important;
+		line-height: @buttonHeight - @paddingSmall * 2;
+		text-align: center;
+	}
+	//listbox footer
+	&-footer {
+		border-top: 1px solid @baseBorderColor;
+		background: @meshFootBackground;
+		overflow: hidden;
+		.resetTable();
+	}
+
+	&-odd.z-listitem {
+		background: @meshStripeBackground;
+	}
+}
+//listhead
+.z-listhead {
+	&:first-child th {
+		border-top-width: 0;
+	}
+	th:first-child {
+		border-left-width: 0;
+
+		// B50-3306729: the first header should have border-left when the first column is covered with other header
+		&.z-listhead-border {
+			border-left: 1px solid @meshTitleBorderColor;
+		}
+	}
+	&-bar {
+		border-top: 1px solid @meshTitleBorderColor;
+		border-left: 1px solid @meshTitleBorderColor;
+	}
+}
+.z-listheader {
+	border-top: 1px solid @meshTitleBorderColor;
+	border-left: 1px solid @meshTitleBorderColor;
+	padding: 0;
+	background: @meshTitleBackground;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	
+	&-hover .z-listheader-button {
+		display: block;
+	}
+	&-sort {
+		.z-listheader-content {
+			cursor: pointer;
+		}
+		.z-listheader-sorticon {
+			.iconFontStyle(@baseFontSize, @meshTitleColor);
+			line-height: normal;
+			position: absolute;
+			top: 0;
+			left: 50%;
+		}
+	}
+	&-checkable {
+		.displaySize(inline-block, @checkedSize, @checkedSize);
+		border: 1px solid @checkedBorderColor;
+		background: @checkedBackground;
+		vertical-align: text-top;
+		
+		.z-listheader-icon {
+			display: none;
+			cursor: default;
+		}
+		&.z-listheader-checked .z-listheader-icon {
+			.iconFontStyle(@checkedFontSize, @checkedColor);
+			display: block;
+			margin-top: -@checkedFontSize / 2;
+			line-height: normal;
+			text-align: center;
+			position: relative;
+			top: 50%;
+		}
+	}
+	&-button {
+		color: @meshTitleColor;
+		.displaySize(none, @headerWidth, @headerHeight - 1);
+		border-left: 1px solid @meshTitleBorderColor;
+		line-height: @headerHeight;
+		text-align: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		text-decoration: none;
+		z-index: 15;
+		cursor: pointer;
+		
+		&:hover {
+			background: @meshMenuHoverBackground;
+		}
+	}
+	&-sizing,
+	&-sizing .z-listheader-button,
+	&-sizing.z-listheader-sort .z-listheader-content {
+		cursor: e-resize;
+	}
+}
+//list item and cell
+.z-listitem {
+	&:first-child {
+		.z-listcell {
+			border-top-width: 0;
+		}
+		.z-listcell-content,
+		.z-listgroup-content {
+			padding-top: @paddingSmall;
+		}
+	}
+	//list cell
+	.z-listcell {
+		border-top: 1px solid @baseBorderColor;
+		background: @baseBackground;
+		overflow: hidden;
+	}
+	&:hover {
+		> .z-listcell {
+			background: @hoverBackground;
+		}
+		.z-listcell-content {
+			color: @hoverColor;
+		}
+	}
+	//check mark
+	&-checkable {
+		.displaySize(inline-block, @checkedSize, @checkedSize);
+		border: 1px solid @checkedBorderColor;
+		background: @checkedBackground;
+		vertical-align: text-top;
+		
+		&.z-listitem-radio {
+			.borderRadius(@checkedSize / 2);
+		}
+		.z-listitem-icon {
+			display: none;
+			cursor: pointer;
+		}
+	}
+	//selected
+	&-selected {
+		//list cell and content
+		.z-listcell {
+			border-color: @selectedBorderColor;
+			background: @selectedBackground;
+		}
+		.z-listcell-content {
+			color: @selectedColor;
+		}
+		&:hover {
+			> .z-listcell {
+				border-color: @selectedHoverBorderColor;
+				background: @selectedHoverBackground;
+			}
+			.z-listcell-content {
+				color: @selectedHoverColor;
+			}
+		}
+		//check mark
+		.z-listitem-icon {
+			.iconFontStyle(@checkedFontSize, @checkedColor);
+			display: block;
+			margin-top: -@checkedFontSize / 2;
+			line-height: normal;
+			text-align: center;
+			position: relative;
+			top: 50%;
+			
+			&.z-icon-ok {} //for checkbox, use font-awesome
+			&.z-icon-radio { //for radio
+				.size(@checkedSize / 2, @checkedSize / 2);
+				.borderRadius(@checkedSize / 4);
+				margin-top: -@checkedSize / 4;
+				margin-left: -@checkedSize / 4;
+				background: @checkedColor;
+				left: 50%;
+			}
+		}
+	}
+	//disabled
+	&.z-listitem-disabled {
+		* {
+			color: @meshDisabledColor !important;
+			background: @meshDisabledBackground;
+			cursor: default !important;
+		}
+		&:hover > .z-listcell {
+			background: @meshDisabledBackground;
+		}
+		a, a:visited, a:hover {
+			text-decoration: none;
+		}
+	}
+	a, a:visited, a:hover {
+		text-decoration: none;
+	}
+}
+//Group
+.z-listgroup {
+	&-inner {
+		border-top: 1px solid @groupBorderColor;
+		background: @groupBackground;
+		overflow: hidden;
+
+		.z-listcell-content,
+		.z-listgroup-content {
+			padding: @paddingSmall - 1 @paddingSmall @paddingSmall;
+		}
+	}
+	&:first-child {
+		.z-listgroup-inner {
+			border-top-width: 0;
+		}
+	}
+	&-icon {
+		.iconFontStyle(@fontSizeLarge, @baseTextColor);
+		.displaySize(inline-block, @iconWidth, @iconHeight);
+		text-align: center;
+		vertical-align: top;
+		cursor: pointer;
+	}
+}
+.z-listgroupfoot-inner {
+	border-top: 1px solid @baseBorderColor;
+	background: @groupFootBackground;
+	overflow: hidden;
+}
+//content
+.z-listheader-content {
+	.fontStyle(@titleFontFamily, @meshTitleFontSize, @fontWeightSemiBold, @meshTitleColor);
+	padding: @paddingSmall @paddingSize;
+	line-height: @headerHeight - @paddingSmall * 2;
+	position: relative;
+	overflow: hidden;
+}
+.z-listcell-content,
+.z-listgroup-content,
+.z-listgroupfoot-content,
+.z-listfooter-content {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+	padding: @paddingSmall - 1 @paddingSmall @paddingSmall;
+	line-height: @buttonHeight - @paddingSmall * 2;
+	overflow: hidden;
+	cursor: pointer;
+}
+.z-listgroup-content,
+.z-listgroupfoot-content,
+.z-listfooter-content {
+	line-height: @barHeight - @paddingSmall * 2;
+	cursor: default;
+}
+.z-listgroup-content,
+.z-listgroupfoot-content {
+	.z-label {
+		font-weight: @fontWeightSemiBold;
+	}
+}
+//paging
+.z-listbox-paging {
+	&-top {
+		overflow: hidden;
+		width: 100%;
+
+		.z-paging {
+			border: none;
+			border-bottom: 1px solid @baseBorderColor;
+		}
+	}
+	&-bottom {
+		overflow: hidden;
+		width: 100%;
+
+		.z-paging {
+			border: none;
+			border-top: 1px solid @baseBorderColor;
+		}
+	}
+}
+//column menu
+.z-listhead-menugrouping .z-menuitem-image {
+	.encodeThemeURL(background-image, '~./zul/img/grid/menu-group.png');
+}
+.z-listhead-menuungrouping .z-menuitem-image {
+	.encodeThemeURL(background-image, '~./zul/img/grid/menu-ungroup.png');
+}
+.z-listhead-menuascending .z-menuitem-image {
+	.encodeThemeURL(background-image, '~./zul/img/grid/menu-arrowup.png');
+}
+.z-listhead-menudescending .z-menuitem-image {
+	.encodeThemeURL(background-image, '~./zul/img/grid/menu-arrowdown.png');
+}
+//select mold
+.z-select {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+}
+
+//IE8 use image for radio icon
+.ie8 {
+	.z-listitem {
+		.z-icon-radio {
+			.displaySize(block, 13px, 13px);
+			.encodeThemeURL(background, '~./zul/img/common/check-sprite.gif', no-repeat);
+			position: relative;
+			top: 5px;
+			left: 5px;
+		}
+		&-radio {
+			border-width: 0;
+			background: transparent;
+
+			.z-icon-radio {
+				background-position: 0 -13px;
+			}
+		}
+		&-selected .z-icon-radio {
+			border-width: 0;
+			margin: 0;
+			background-position: -26px -13px;
+		}
+	}
+}

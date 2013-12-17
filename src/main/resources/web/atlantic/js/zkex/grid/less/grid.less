@@ -1,0 +1,39 @@
+@import "~./atlantic/zul/less/_header.less";
+
+.z-row {
+	.z-detail-outer {
+		width: @barWidth;
+		min-width: @barWidth;
+		border-top: 1px solid @baseBorderColor;
+		padding: 0 @paddingSmall;
+		background: @baseBackground;
+		vertical-align: top;
+	}
+
+	&:first-child .z-detail-outer {
+		border-top-width: 0;
+	}
+
+	.z-detail-outer + td,
+	.z-detail-inner:first-child {
+		border-left: 1px solid @baseBorderColor;
+	}
+}
+
+.z-detail {
+	.size(@iconWidth, @iconHeight);
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+
+	&-icon {
+		.iconFontStyle(@fontSizeLarge, @baseTextColor);
+	}
+	&-open ~ .z-row-inner {
+		.z-row-content,
+		.z-cell {
+			font-weight: @fontWeightSemiBold;
+		}
+	}
+}

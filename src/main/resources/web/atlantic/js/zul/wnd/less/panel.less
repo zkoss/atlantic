@@ -1,0 +1,156 @@
+@import "~./atlantic/zul/less/_header.less";
+
+.z-panel {
+	overflow: hidden;
+
+	&-shadow {
+		.boxShadow('0 0 4px rgba(0, 0, 0, 0.5)');
+	}
+
+	&-collapsed {
+		height: auto !important;
+	}
+
+	&-head {
+		border: 1px solid @baseBorderColor;
+		padding: @paddingSize - 1 @paddingLarge - 1;
+		line-height: @headerHeight - @paddingSize * 2;
+		background: @baseBackground;
+		overflow: hidden;
+	}
+	&-header {
+		.fontStyle(@titleFontFamily, @panelTitleFontSize, @fontWeightLight, @panelTitleColor);
+		overflow: hidden;
+
+		&-move {
+			cursor: move;
+		}
+	}
+
+	&-body {
+		border: 1px solid @baseBorderColor;
+		border-top-width: 0;
+		padding: @paddingSize @paddingLarge - 1 @paddingSize - 1;
+		background: @baseBackground;
+		overflow: hidden;
+
+		&:first-child {
+			height: 100%;
+		}
+	}
+
+	&-top .z-toolbar {
+		border-bottom-width: 0;
+		padding: @paddingSmall - 1 @paddingSmall - 1 @paddingSmall;
+	}
+	&-footer,
+	&-bottom {
+		.z-toolbar {
+			border-top-width: 0;
+			padding: @paddingSmall @paddingSmall - 1 @paddingSmall - 1;
+		}
+	} 
+	&-top .z-toolbar-panel,
+	&-footer .z-toolbar-panel {
+		border-width: 0px;
+		padding: @paddingSmall;
+	}
+
+	&-icon {
+		.iconFontStyle(@iconSize, @iconColor);
+		.displaySize(block, @iconWidth, @iconHeight);
+		margin-top: (@headerHeight - @paddingSize * 2 - @iconHeight) / 2;
+		line-height: @iconHeight;
+		text-align: center;
+		cursor: pointer;
+		overflow: hidden;
+		float: right;
+
+		&:hover {
+			color: @hoverColor;
+			background: @hoverBackground;
+		}
+	}
+	&-minimize {
+		padding-top: 4px;
+	}
+	&-expand {
+		font-size: @iconSize + 2;
+	}
+
+	&-resize-faker {
+		border: 1px dashed #1854C2;
+		background: #D7E6F7;
+		.opacity(0.5);
+		position: absolute;
+		left: 0;
+		top: 0;
+		overflow: hidden;
+		z-index: 60000;
+	}
+
+	&-move-ghost {
+		border: 1px solid #9F9F9F;
+		padding: 0;
+		background: #D7E6F7;
+		.opacity(0.6);
+		position: absolute;
+		cursor: move;
+		overflow: hidden;
+
+		.z-panel-body {
+			padding: 0;
+		}
+
+		dl {
+			font-size: 0;
+			display: block;
+			border: 1px solid @baseBorderColor;
+			border-top: 0;
+			margin: 0;
+			padding: 0;
+			line-height: 0;
+			overflow: hidden;
+		}
+	}
+ 	&-move-block {
+	 	border: 2px dashed #B2CAD6;
+	}
+
+	&-noframe &-body {
+		border-width: 0;
+		padding: 0;
+		background: @baseBackground;
+
+		.z-panelchildren {
+			border-top-width: 0;
+		}
+	}
+
+	&-noheader &-body {
+		border-top: 1px solid @baseBorderColor;
+		padding: @paddingLarge - 1;
+	}
+	&-noheader&-noframe &-body {
+		border-width: 0;
+		padding: @paddingLarge;
+	}
+	&-noheader&-noframe .z-panelchildren {
+		border-top: 1px solid @baseBorderColor;
+	}
+
+	&-noborder&-noframe .z-panelchildren {
+		border-width: 0;
+	}
+	&-noborder .z-panel-bottom .z-toolbar {
+		border-width: 0;
+		padding: @paddingSmall;
+	}
+}
+
+.z-panelchildren {
+	border: 1px solid @baseBorderColor;
+	background: @baseBackground;
+	position: relative;
+	overflow: hidden;
+}

@@ -101,8 +101,10 @@
 		cursor: e-resize;
 	}
 }
+// ZK-2151: use strict selector to prevent nest problem
 //tree row and cell
 .z-treerow {
+	background: #FFFFFF;
 	//tree cell
 	.z-treecell {
 		overflow: hidden;
@@ -111,11 +113,12 @@
 	&:hover {
 		> .z-treecell {
 			background: @hoverBackground;
+
+			> .z-treecell-content {
+				color: @hoverColor;
+			}
 		}
-		.z-treecell-content,
-		.z-tree-icon {
-			color: @hoverColor;
-		}
+		
 	}
 	//check mark
 	&-checkable {
@@ -135,25 +138,27 @@
 	//selected
 	&-selected {
 	 	//tree cell and content
-		.z-treecell {
+		> .z-treecell {
 			border-color: @selectedBorderColor;
 			background: @selectedBackground;
+			> .z-treecell-content {
+				color: @selectedColor;
+			}
 		}
-		.z-treecell-content {
-			color: @selectedColor;
-		}
+		
 		&:hover {
 			> .z-treecell {
 				border-color: @selectedHoverBorderColor;
 				background: @selectedHoverBackground;
-			}
-			.z-listcell-content,
-			.z-tree-icon {
-				color: @selectedHoverColor;
+
+				> .z-treecell-content {
+					color: @selectedHoverColor;
+				}
 			}
 		}
 		//check mark
-		.z-treerow-icon {
+		> .z-treecell > .z-treecell-content
+			> .z-treerow-checkable .z-treerow-icon {
 			.iconFontStyle(@checkedFontSize, @checkedColor);
 			display: block;
 			margin-top: -@checkedFontSize / 2;
@@ -162,7 +167,10 @@
 			position: relative;
 			top: 50%;
 
-			&.z-icon-ok {} //for checkbox, use font-awesome
+			&.z-icon-check { //for checkbox
+				color: @checkedColor;
+			} 
+
 			&.z-icon-radio { //for radio
 				.size(@checkedSize / 2, @checkedSize / 2);
 				.borderRadius(@checkedSize / 4);
@@ -229,10 +237,12 @@
 	}
 }
 
+// ZK-2151: use strict selector to prevent nest problem
 //IE8 use image for radio icon
 .ie8 {
 	// check and radio icon fallback
-	.z-treerow-checkable {
+	.z-treerow > .z-treecell 
+		> .z-treecell-content > .z-treerow-checkable {
 		border-width: 0;
 		background: transparent;
 		.z-treerow-icon {
@@ -252,7 +262,13 @@
 			background-position: 0 -13px;
 		}
 	}
-	.z-treerow-selected .z-treerow-checkable {
+	.z-treerow-selected > .z-treecell 
+		> .z-treecell-content > .z-treerow-checkable {
+
+		.z-treerow-icon {
+			.displaySize(block, 13px, 13px);
+		}
+		
 		.z-icon-check {
 			margin: 0;
 			background-position: -26px 0px;

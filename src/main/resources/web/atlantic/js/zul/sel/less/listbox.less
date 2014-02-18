@@ -268,12 +268,35 @@
 			border-top-width: 0;
 		}
 	}
+	//check mark
+	&-checkable {
+		.displaySize(inline-block, @checkedSize, @checkedSize);
+		border: 1px solid @checkedBorderColor;
+		background: @checkedBackground;
+		vertical-align: text-top;
+		
+		.z-listgroup-icon {
+			display: none;
+			cursor: default;
+		}
+	}
 	&-icon {
 		.iconFontStyle(@fontSizeLarge, @baseTextColor);
 		.displaySize(inline-block, @iconWidth, @iconHeight);
 		text-align: center;
 		vertical-align: top;
 		cursor: pointer;
+	}
+	//selected check mark
+	&-selected > .z-listcell > .z-listcell-content 
+			> .z-listgroup-checkable .z-listgroup-icon {
+		.iconFontStyle(@checkedFontSize, @checkedColor);
+		.displaySize(block, auto, auto);
+		margin-top: -@checkedFontSize / 2;
+		line-height: normal;
+		text-align: center;
+		position: relative;
+		top: 50%;
 	}
 }
 .z-listgroupfoot-inner {
@@ -357,7 +380,7 @@
 	.ie8-checkable-icon(z-listheader);
 	.ie8-checkable-icon(z-listgroup);
 	.ie8-checkable-icon(z-listitem);
-	.z-listheader-checkable.z-listheader-checked,
+	.z-listheader > .z-listheader-content > .z-listheader-checkable.z-listheader-checked,
 	.z-listgroup-selected > .z-listcell 
 		> .z-listcell-content > .z-listgroup-checkable,
 	.z-listitem-selected > .z-listcell 
@@ -381,7 +404,8 @@
 }
 .ie8-checkable-icon(@comp) {
 	.@{comp} > .z-listcell 
-		> .z-listcell-content > .@{comp}-checkable {
+		> .z-listcell-content > .@{comp}-checkable,
+	.@{comp} > .@{comp}-content > .@{comp}-checkable {
 		border-width: 0;
 		background: transparent;
 		.@{comp}-icon {

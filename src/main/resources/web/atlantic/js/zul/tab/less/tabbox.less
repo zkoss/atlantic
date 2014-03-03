@@ -17,6 +17,7 @@
 	z-index: 1;
 }
 
+// ZK-2100: use strict selector to prevent nest problem
 .z-tabbox {
 	position: relative;
 	overflow: hidden;
@@ -54,19 +55,23 @@
 	}
 	// top (default)
 	&-top {
-		.z-tabs-content {
-			border-bottom: 1px solid @baseBorderColor;
-		}
-		.z-tab {
-			display: inline-block;
-			border-bottom-width: 0;
-			padding-bottom: @paddingSize;
-			
-			&-selected {
-				.boxShadow(0 1px 0 #FFFFFF);
+		> .z-tabs {
+			.z-tabs-content {
+				border-bottom: 1px solid @baseBorderColor;
+			}
+
+			.z-tab {
+				display: inline-block;
+				border-bottom-width: 0;
+				padding-bottom: @paddingSize;
+				
+				&.z-tab-selected {
+					.boxShadow(0 1px 0 #FFFFFF);
+				}
 			}
 		}
-		.z-tabpanel {
+
+		> .z-tabpanels > .z-tabpanel {
 			border-top-width: 0;
 			padding-top: @paddingSmall;
 		}
@@ -77,23 +82,25 @@
 	}
 	// bottom
 	&-bottom {
-		.z-tabs-content {
-			border-top: 1px solid @baseBorderColor;
-		}
-		.z-tab {
-			display: inline-block;
-			border-top-width: 0;
-			padding-top: @paddingSize;
-			
-			&-selected {
-				.boxShadow(0 -1px 0 #FFFFFF);
+		> .z-tabs {
+			.z-tabs-content {
+				border-top: 1px solid @baseBorderColor;
+			}
+			.z-tab {
+				display: inline-block;
+				border-top-width: 0;
+				padding-top: @paddingSize;
+				
+				&.z-tab-selected {
+					.boxShadow(0 -1px 0 #FFFFFF);
+				}
 			}
 		}
-		.z-tabpanel {
+		> .z-tabpanels > .z-tabpanel {
 			border-bottom-width: 0;
 			padding-bottom: @paddingSize;
 		}
-		.z-tabbox-icon {
+		> .z-tabbox-icon {
 			top: auto;
 			bottom: 0;
 		}
@@ -106,33 +113,34 @@
 	}
 	// left
 	&-left {
-		.z-tabs {
+		> .z-tabs {
 			float: left;
 	
-			&-content {
+			.z-tabs-content {
 				.displaySize(block, 100%, 4096px);
 				border-right: 1px solid @baseBorderColor;
 			}
-		}
-		.z-tab {
-			border-right-width: 0;
-			padding-right: @paddingSize;
-			float: none;
-			
-			&-button {
-				left: @paddingSize;
-				right: auto;
+
+			.z-tab {
+				border-right-width: 0;
+				padding-right: @paddingSize;
+				float: none;
 				
-				& +.z-tab-text {
-					margin-right: 0;
-					margin-left: @iconWidth + @paddingSize;
+				&-button {
+					left: @paddingSize;
+					right: auto;
+					
+					& +.z-tab-text {
+						margin-right: 0;
+						margin-left: @iconWidth + @paddingSize;
+					}
+				}
+				&.z-tab-selected {
+					.boxShadow(1px 0 0 #FFFFFF);
 				}
 			}
-			&-selected {
-				.boxShadow(1px 0 0 #FFFFFF);
-			}
 		}
-		.z-tabpanel {
+		> .z-tabpanels > .z-tabpanel {
 			border-left-width: 0;
 			padding-left: @paddingSmall;
 		}
@@ -145,24 +153,26 @@
 
 	// right
 	&-right {
-		.z-tabs {
+		> .z-tabs {
 			float: right;
 			
-			&-content {
+			.z-tabs-content {
 				.displaySize(block, 100%, 4096px);
 				border-left: 1px solid @baseBorderColor;
 			}
-		}
-		.z-tab {
-			border-left-width: 0;
-			padding-left: @paddingSize;
-			float: none;
-			
-			&-selected {
-				.boxShadow(-1px 0 0 #FFFFFF);
+
+			.z-tab {
+				border-left-width: 0;
+				padding-left: @paddingSize;
+				float: none;
+				
+				&.z-tab-selected {
+					.boxShadow(-1px 0 0 #FFFFFF);
+				}
 			}
 		}
-		.z-tabpanel {
+		
+		> .z-tabpanels > .z-tabpanel {
 			border-right-width: 0;
 			padding-right: @paddingSmall;
 		}
@@ -171,7 +181,7 @@
 				margin: @headerHeight 0;
 			}
 		}
-		.z-tabbox-icon {
+		> .z-tabbox-icon {
 			right: 0;
 		}
 	}

@@ -2,7 +2,9 @@
 Atlantic 1.0.1
 Nov 26 2013
 * Features:
+  * Support ZK 7.0.1
 * Bugs:
+  * ALT-6: Several issue on iPad
   * Fix Notification icon position
 * Upgrade Notes:
 

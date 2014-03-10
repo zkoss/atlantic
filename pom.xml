@@ -5,7 +5,7 @@
 	<artifactId>atlantic</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<properties>
-		<zk.version>7.0.0</zk.version>
+		<zk.version>7.0.1</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}</packname>
 	</properties>

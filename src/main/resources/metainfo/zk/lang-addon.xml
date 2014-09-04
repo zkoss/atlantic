@@ -5,6 +5,6 @@
 
 	<version>
 		<version-class>org.zkoss.theme.atlantic.Version</version-class>
-		<version-uid>0.8.0</version-uid>
+		<version-uid>1.0.2</version-uid>
 	</version>
 </language-addon>

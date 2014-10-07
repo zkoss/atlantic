@@ -44,6 +44,7 @@
 		padding: @paddingSmall @paddingSize !important;
 		line-height: @buttonHeight - @paddingSmall * 2;
 		text-align: center;
+		height: 1px;
 	}
 	//grid footer
 	&-footer {
@@ -239,6 +240,17 @@
 			border: none;
 			border-top: 1px solid @baseBorderColor;
 		}
+	}
+}
+.z-grid-autopaging {
+	.z-row-content,
+	.z-groupfoot-content {
+		height: @meshAutoPagingRowHeight;
+		overflow: hidden;
+	}
+	.z-group-content {
+		height: @meshAutoPagingRowHeight - 2;
+		overflow: hidden;
 	}
 }
 //column menu

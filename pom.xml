@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.zkoss.theme</groupId>
 	<artifactId>atlantic</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<properties>
-		<zk.version>7.0.0</zk.version>
+		<zk.version>7.0.4-SNAPSHOT</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}</packname>
 	</properties>
@@ -26,8 +26,8 @@
 			<url>http://mavensync.zkoss.org/maven2</url>
 		</repository>
 		<repository>
-			<id>ZK EE Eval</id>
-			<name>ZK EE Eval Repository</name>
+			<id>ZK EVAL</id>
+			<name>ZK Evaluation Repository</name>
 			<url>http://mavensync.zkoss.org/eval/</url>
 		</repository>
 	</repositories>
@@ -43,11 +43,13 @@
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zul</artifactId>
 			<version>${zk.version}</version>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zkmax</artifactId>
 			<version>${zk.version}</version>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 	<build>
@@ -61,7 +63,7 @@
 			<plugin>
 				<groupId>org.zkoss.maven</groupId>
 				<artifactId>zkless-engine-maven-plugin</artifactId>
-				<version>0.8.3</version>
+				<version>0.9.4</version>
 				<executions>
 					<execution>
 						<id>compile-less</id>

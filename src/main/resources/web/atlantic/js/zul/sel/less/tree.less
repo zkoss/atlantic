@@ -43,6 +43,7 @@
 		padding: @paddingSmall @paddingSize !important;
 		line-height: @buttonHeight - @paddingSmall * 2;
 		text-align: center;
+		height: 1px;
 	}
 	//tree footer div
 	&-footer {
@@ -95,6 +96,13 @@
 
 	&-sort {
 		cursor: pointer;
+		
+		.z-treecol-sorticon {
+			color: @iconColor;
+			position: absolute;
+			top: -7px;
+			left: 50%;
+		}
 	}
 	&-sizing,
 	&-sizing .z-treecol-content {
@@ -236,7 +244,10 @@
 		}
 	}
 }
-
+.z-tree-autopaging .z-treecell-content {
+	height: @meshAutoPagingRowHeight;
+	overflow: hidden;
+}
 // ZK-2151: use strict selector to prevent nest problem
 //IE8 use image for radio icon
 .ie8 {

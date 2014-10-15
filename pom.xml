@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.zkoss.theme</groupId>
 	<artifactId>atlantic</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
+	<version>1.0.3</version>
 	<properties>
-		<zk.version>7.0.4-SNAPSHOT</zk.version>
+		<zk.version>7.0.3-Eval</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}</packname>
 	</properties>
@@ -26,8 +26,7 @@
 			<url>http://mavensync.zkoss.org/maven2</url>
 		</repository>
 		<repository>
-			<id>ZK EVAL</id>
-			<name>ZK Evaluation Repository</name>
+			<id>ZK PE/EE Evaluation</id>
 			<url>http://mavensync.zkoss.org/eval/</url>
 		</repository>
 	</repositories>

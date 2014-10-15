@@ -2,11 +2,21 @@
 Atlantic 1.0.2
 Sep 4 2014
 * Features:
+  * Support ZK 7.0.3.1
+  
+* Bugs:
+* Upgrade Notes:
+
+	--------
+Atlantic 1.0.2
+Sep 4 2014
+* Features:
   * Support ZK 7.0.3
   
 * Bugs:
 * Upgrade Notes:
 
+	--------
 Atlantic 1.0.1
 Mar 12 2014
 * Features:
@@ -16,6 +26,7 @@ Mar 12 2014
   * Fix Notification icon position
 * Upgrade Notes:
 
+	--------
 Atlantic 1.0.0
 Nov 26 2013
 * Features:

@@ -3,5 +3,5 @@ package org.zkoss.theme.atlantic;
 public class Version {
 	/** Returns the version UID.
 	 */
-	public static final String UID = "1.0.3";
+	public static final String UID = "1.0.4";
 }

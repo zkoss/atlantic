@@ -1,6 +1,16 @@
 	--------
-Atlantic 1.0.2
-Sep 4 2014
+Atlantic 1.0.4
+Dec 9 2014
+* Features:
+  * Support ZK 7.0.4
+  
+* Bugs:
+  ZK-2488: Caption component with label renders incorrectly
+* Upgrade Notes:
+
+	--------
+Atlantic 1.0.3
+Oct 15 2014
 * Features:
   * Support ZK 7.0.3.1
   

@@ -3,6 +3,7 @@ Atlantic 1.0.5
 * Features:
   
 * Bugs:
+  ZK-2626: treerow height for autopaging is not consistency with default mold
 
 * Upgrade Notes:
 

@@ -4,6 +4,7 @@ Atlantic 1.0.5
   
 * Bugs:
   ZK-2626: treerow height for autopaging is not consistency with default mold
+  ZK-2648: Icons are not centered vertically inside paging control
 
 * Upgrade Notes:
 

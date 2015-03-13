@@ -26,7 +26,7 @@
 			<url>http://mavensync.zkoss.org/maven2</url>
 		</repository>
 		<repository>
-			<id>ZK PE/EE Evaluation</id>
+			<id>ZK PE EE Evaluation</id>
 			<url>http://mavensync.zkoss.org/eval/</url>
 		</repository>
 	</repositories>
@@ -62,7 +62,7 @@
 			<plugin>
 				<groupId>org.zkoss.maven</groupId>
 				<artifactId>zkless-engine-maven-plugin</artifactId>
-				<version>0.9.6</version>
+				<version>0.9.4</version>
 				<executions>
 					<execution>
 						<id>compile-less</id>

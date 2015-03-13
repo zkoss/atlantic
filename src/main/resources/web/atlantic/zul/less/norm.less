@@ -408,8 +408,10 @@ span.z-upload input {
 
 .ie8, .ie9, .ie10 {
 	.z-upload-hover {
+		color: @hoverColor;
 		border-color: @hoverBorderColor;
-		.verGradient(@hoverGradientStart, @hoverGradientEnd);
+		background: @hoverBackground;
+		.boxShadow(inset 0 -1px 0 @hoverShadowColor);
 	}
 }
 

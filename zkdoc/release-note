@@ -1,11 +1,21 @@
   --------
 Atlantic 1.0.5
+Mar 24 2015
 * Features:
   
 * Bugs:
   ZK-2626: treerow height for autopaging is not consistency with default mold
   ZK-2648: Icons are not centered vertically inside paging control
 
+* Upgrade Notes:
+
+  --------
+Atlantic 1.0.4.1
+Mar 13 2015
+* Features:
+  
+* Bugs:
+  #13: zk atlantic theme missing contents in norm.css.dsp
 * Upgrade Notes:
 
   --------

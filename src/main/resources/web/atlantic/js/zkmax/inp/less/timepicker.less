@@ -1,0 +1,162 @@
+@import "~./atlantic/zul/less/_header.less";
+
+.z-timepicker {
+	display: inline-block;
+	min-height: @buttonHeight;
+	line-height: normal; //reset for inside other component
+	white-space: nowrap;
+	clear: both;
+
+	&-input {
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @inputColor);
+		height: @buttonHeight;
+		border: 1px solid @inputBorderColor;
+		border-right-width: 0;
+		margin: 0;
+		padding: @paddingSmall - 1 @paddingSize - 1;
+		line-height: @buttonHeight - @paddingSmall * 2;
+		background: @inputBackground;
+
+		&:focus {
+			border-color: @focusBorderColor;
+			.boxShadow(inset -1px 0 0 @focusBorderColor);
+		}
+		&[readonly] {
+			border-color: @readonlyBorderColor;
+			background: @readonlyBackground;
+			.boxShadow(none);
+		}
+	}
+
+	&-button {
+		.displaySize(inline-block, @buttonWidth, @buttonHeight);
+		border: 1px solid @inputBorderColor;
+		background: @inputBackground;
+		vertical-align: middle;
+		cursor: pointer;
+		overflow: hidden;
+
+		&:hover {
+			border-color: @hoverBorderColor;
+			background: @hoverBackground;
+			
+			> i {
+				color: @hoverColor;
+			}
+		}
+		&:active {
+			border-color: @activeBorderColor;
+			background: @activeBackground;
+			
+			> i {
+				color: @activeColor;
+			}
+		}
+		input[disabled] + & {
+			&:hover,
+			&:active {
+				border-color: @inputBorderColor;
+				background: 0;
+			}
+		}
+	}
+
+	&-icon {
+		.iconFontStyle(@baseFontSize, @baseTextColor);
+		display: block !important;
+		width: @buttonWidth - 2; //minus border width
+		line-height: @buttonHeight - 2; //minus border width
+		text-align: center;
+	}
+
+	&-disabled {
+		.opacity(@disabledOpacity);
+		& * {
+			color: @inputDisabledColor !important;
+			background: @inputDisabledBackground !important;
+			cursor: default !important;
+		}
+	}
+
+	&-invalid {
+		border: 1px solid @invalidBorderColor !important;
+		margin-right: -1px;
+		background: @invalidBackground;
+		.boxShadow(inset -1px 0 0 @invalidBorderColor);
+	}
+
+	&-readonly:focus {
+		border-right-width: 0;
+		border-color: @readonlyBorderColor;
+		background: transparent repeat-x 0 0;
+		cursor: default;
+	}
+
+	&-rightedge {
+		border-right: 1px solid @inputBorderColor;
+	}
+}
+
+.z-timepicker-button {
+	font-size: @fontSizeLarge;
+}
+
+
+// Inplace editing
+.z-timepicker-inplace .z-timepicker-input {
+	padding: @paddingSmall + 1;
+	border: 0;
+	background: none;
+
+	&:focus {
+		background: 0;
+	}
+}
+.z-timepicker-inplace .z-timepicker-button {
+	display: none;
+}
+
+.z-timepicker-popup {
+	max-height: 200px;
+}
+
+.z-timepicker-option {
+	display: block;
+	padding: @paddingSmall @paddingSize;
+	line-height: @buttonHeight - @paddingSmall * 2;
+	position: relative;
+	white-space: nowrap;
+	cursor: pointer;
+	color: @baseTextColor;
+	text-decoration: none;
+}
+
+.z-timepicker-option:hover {
+	color: @hoverColor;
+	background: @hoverBackground;
+	
+	.z-timepicker-option-inner,
+	.z-timepicker-option-content {
+		color: @hoverColor;
+	}
+}
+
+.z-timepicker-popup {
+	.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+	display: block;
+	border: 1px solid @baseBorderColor;
+	background: @baseBackground;
+	position: absolute;
+	overflow: auto;
+}
+
+.z-timepicker-content {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	background: transparent none repeat 0 0;
+	position: relative;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}

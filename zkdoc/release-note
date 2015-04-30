@@ -1,7 +1,7 @@
   --------
 Atlantic 1.0.6
 * Features:
-  
+ ZK-2707: Add a timepicker component
 * Bugs:
  ZK-2693: HTTPS/SSL errors due to fonts.googleapis.com import
 * Upgrade Notes:

@@ -3,6 +3,7 @@ Atlantic 1.1.1
 * Features:
 
 * Bugs:
+  ZK-2783: empty comboitem renders without height
 
 * Upgrade Notes:
 

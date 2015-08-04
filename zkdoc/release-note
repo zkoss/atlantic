@@ -6,7 +6,9 @@ Atlantic 1.0.6
  ZK-2693: HTTPS/SSL errors due to fonts.googleapis.com import
  ZK-2630: Window caption didn't align with close icon in Firefox
  ZK-2783: empty comboitem renders without height
- 
+ ZK-2802: toolbarbutton does not support big image icon
+ ZK-2628: Combo item does not display icon
+
 * Upgrade Notes:
 
   --------

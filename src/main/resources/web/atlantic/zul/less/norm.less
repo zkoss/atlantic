@@ -52,11 +52,11 @@ legend {
 	padding: 0; 
 }
 
-<c:if test="${zk.gecko > 0}">
-button::-moz-focus-inner {
-	border: 0;
+.gecko {
+	button::-moz-focus-inner {
+		border: 0;
+	}
 }
-</c:if>
 <c:if test="${empty c:property('org.zkoss.zul.theme.browserDefault')}">
 body {
 	margin: 0;
@@ -397,9 +397,6 @@ span.z-upload input {
 	position: absolute;
 	cursor: pointer;
 	z-index: -1;
-	<c:if test="${zk.ie <= 10}">
-	z-index: 1;
-	</c:if>
 }
 .z-upload-icon {
 	.encodeThemeURL(background-image, '~./zul/img/misc/prgmeter.png');
@@ -412,6 +409,9 @@ span.z-upload input {
 		border-color: @hoverBorderColor;
 		background: @hoverBackground;
 		.boxShadow(inset 0 -1px 0 @hoverShadowColor);
+	}
+	span.z-upload input {
+		z-index: 1;
 	}
 }
 

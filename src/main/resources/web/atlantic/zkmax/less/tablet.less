@@ -200,7 +200,7 @@ input[type=radio] {
 		position: relative;
 	}
 	&-body {
-		.box(box-orient, horizontal);
+		.boxOrientHor();
 		width: 100%;
 	}
 	&-line {
@@ -216,7 +216,7 @@ input[type=radio] {
 		color: #FFFFFF;
 		height: 210px;
 		margin: 0 2px;
-		.gradValue(ver, '#000 0%; #444 45%; #444 55%; #000 100%');
+		.gradient('ver', '#000 0%; #444 45%; #444 55%; #000 100%');
 		position: relative;
 		overflow: hidden;
 		
@@ -290,17 +290,17 @@ input[type=radio] {
 .z-timebox-wheel-time {
 	.borderRadius(3px);
 	position: relative;
-	.gradValue(ver, '#000 0%; #333 35%; #888 50%; #333 65%; #000 100%');
+	.gradient('ver', '#000 0%; #333 35%; #888 50%; #333 65%; #000 100%');
 }
 // #6: fix css typo
 .z-calendar-wheel-date {
-	.box2(box-orient, horizontal, box-flex, 1);
+	.boxOrientHorFlex();
 	width: 100%;
 	margin-right: 4px;
 }
 .z-timebox-wheel-time {
-	.box('box-orient', 'horizontal');
-  	width: 50%;
+	.boxOrientHor();
+	width: 50%;
 }
 li.z-calendar-wheel-list-selected,
 li.z-timebox-wheel-list-selected {

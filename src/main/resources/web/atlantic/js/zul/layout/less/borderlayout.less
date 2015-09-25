@@ -1,11 +1,8 @@
 @import "~./atlantic/zul/less/_header.less";
 
 @media print {
-	.z-borderlayout {
-		//Bug 2949287
-		<c:if test="${zk.safari > 0}">
+	.safari .z-borderlayout {
 		position: static;
-		</c:if>
 	}
 }
 
@@ -176,9 +173,9 @@
 }
 
 // no ellipsis icon in flat design
-.z-north-icon.z-icon-ellipsis-horizontal,
-.z-south-icon.z-icon-ellipsis-horizontal,
-.z-west-icon.z-icon-ellipsis-vertical,
-.z-east-icon.z-icon-ellipsis-vertical {
+.z-north-icon.z-icon-ellipsis-h,
+.z-south-icon.z-icon-ellipsis-h,
+.z-west-icon.z-icon-ellipsis-v,
+.z-east-icon.z-icon-ellipsis-v {
 	display: none;
 }

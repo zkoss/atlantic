@@ -3,7 +3,8 @@ Atlantic 1.1.2
 * Features:
 
 * Bugs:
-
+  ZK-2887: datebox calendar control mostly hidden on ipad
+  
 * Upgrade Notes:
 
   --------

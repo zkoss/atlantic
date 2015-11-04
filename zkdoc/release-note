@@ -3,6 +3,7 @@ Atlantic 1.0.7
 * Features:
   
 * Bugs:
+  ZK-2931: Atlantic theme @import google fonts
 
 * Upgrade Notes:
 

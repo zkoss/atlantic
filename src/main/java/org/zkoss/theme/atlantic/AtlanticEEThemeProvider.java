@@ -6,9 +6,9 @@ import java.util.List;
 import org.zkoss.html.StyleSheet;
 import org.zkoss.lang.Library;
 import org.zkoss.zk.ui.Execution;
-import org.zkoss.zul.theme.StandardThemeProvider;
+import org.zkoss.zkmax.theme.StandardThemeProvider;
 
-public class AtlanticThemeProvider extends StandardThemeProvider {
+public class AtlanticEEThemeProvider extends StandardThemeProvider {
 
 	/** Library property key. */
 	private static final String DONT_USE_GOOGLE_FONT = "org.zkoss.theme.atlantic.useGoogleFont.disabled";

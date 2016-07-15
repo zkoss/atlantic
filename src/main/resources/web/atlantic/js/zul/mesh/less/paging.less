@@ -94,10 +94,18 @@
 		padding: @paddingSmall - 1;
 		line-height: @buttonHeight - @paddingSmall * 2;
 		vertical-align: baseline;
+		&[disabled] {
+			color: @disabledColor;
+			.opacity(@disabledOpacity);
+			cursor: default;
+		}
 	}
 	&-text {
 		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
 		margin-right: @baseWidth;
+		&-disabled {
+			color: @disabledColor;
+		}
 	}
 	&-info {
 		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);

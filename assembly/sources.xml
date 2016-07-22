@@ -9,11 +9,11 @@
 	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
-			<directory>${project.basedir}/src/main/java</directory>
+			<directory>${project.basedir}/src/org</directory>
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
 		<fileSet>
-			<directory>${project.basedir}/src/main/resources</directory>
+			<directory>${project.basedir}/src/archive</directory>
 			<includes>
 				<include>**/*.less</include>
 			</includes>

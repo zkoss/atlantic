@@ -3,6 +3,7 @@ Atlantic 1.0.8
 * Features:
 
 * Bugs:
+  ZK-3501: slow hover style in bigger listboxes (IE11)
 
 * Upgrade Notes:
 

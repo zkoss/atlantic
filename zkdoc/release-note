@@ -1,7 +1,10 @@
 Atlantic 1.2.0
 * Features:
+  ZK-3336: tbeditor version update
+  ZK-3683: Add a new Splitlayout component
 
 * Bugs:
+  ZK-3263: Scroll position jumps up when clicking on scrollbar
 
 * Upgrade Notes:
 

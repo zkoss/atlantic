@@ -141,6 +141,7 @@
 
 	&-input {
 		.size(@baseWidth * 5, 24px);
+		min-height: 24px;
 		border: 1px solid @baseBorderColor;
 		padding: @paddingSmall - 1;
 		background: @baseBackground;
@@ -179,6 +180,9 @@
 	&-icon {
 		color: #59A755;
 	}
+
+	// new theme compatible
+	&-rgb-text, &-hsv-text {display: none;}
 }
 // Color Palette
 .z-colorpalette {

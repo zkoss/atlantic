@@ -5,6 +5,7 @@ Atlantic 1.2.0
 
 * Bugs:
   ZK-3263: Scroll position jumps up when clicking on scrollbar
+  ZK-3773: Message box button styles in "classic" themes 
 
 * Upgrade Notes:
 

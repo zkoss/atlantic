@@ -7,6 +7,7 @@ Atlantic 8.5.0
   ZK-3263: Scroll position jumps up when clicking on scrollbar
   ZK-3773: Message box button styles in "classic" themes
   ZK-3772: splitlayout shows incorrect cursor for horizontal splitter
+  ZK-3783: panel/window close button markup/style inconsistent
 
 * Upgrade Notes:
 

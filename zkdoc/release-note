@@ -4,6 +4,7 @@ Atlantic 8.5.1
 
 * Bugs:
   ZK-3785: cleanup unused (6.5) images from themes
+  ZK-3579: combobutton not using its defined/available width
 
 * Upgrade Notes:
 

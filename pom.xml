@@ -5,7 +5,7 @@
 	<artifactId>atlantic</artifactId>
 	<version>8.5.1-SNAPSHOT</version>
 	<properties>
-		<zk.version>8.0.4-Eval</zk.version>
+		<zk.version>8.5.1-SNAPSHOT</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}</packname>
 	</properties>

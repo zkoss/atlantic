@@ -1,5 +1,6 @@
 Atlantic 8.5.1
 * Features:
+  ZK-3827: Combobox empty search message
 
 * Bugs:
   ZK-3785: cleanup unused (6.5) images from themes

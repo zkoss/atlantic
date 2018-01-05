@@ -199,6 +199,21 @@
 	display: none;
 }
 
+// combobox emptySearchMessage
+.z-combobox-emptySearchMessage {
+	display: block;
+	padding: @paddingSmall @paddingSize;
+	line-height: @buttonHeight - @paddingSmall * 2;
+	position: relative;
+	white-space: nowrap;
+	cursor: pointer;
+	min-height: @buttonHeight - @paddingSmall * 2;
+	color: @disabledColor;
+}
+.z-combobox-emptySearchMessage-hidden {
+	display: none;
+}
+
 // Comboitem
 .z-comboitem {
 	display: block;
@@ -270,10 +285,12 @@
 
 .z-combobox-popup {
 	overflow: auto;
+	min-height: 10px;
 }
 
 .z-bandbox-popup {
 	overflow: auto;
+	min-height: 10px;
 }
 
 .z-combobox-content {

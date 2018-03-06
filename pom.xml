@@ -5,7 +5,7 @@
 	<artifactId>atlantic</artifactId>
 	<version>8.5.2-SNAPSHOT</version>
 	<properties>
-		<zk.version>8.0.4-Eval</zk.version>
+		<zk.version>8.5.1-Eval</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}</packname>
 	</properties>
@@ -152,25 +152,10 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<finalName>${project.artifactId}-bin${packname}</finalName>
+							<finalName>${project.artifactId}${packname}</finalName>
 							<appendAssemblyId>false</appendAssemblyId>
 							<descriptors>
 								<descriptor>assembly/bin.xml</descriptor>
-							</descriptors>
-						</configuration>
-					</execution>
-					<!-- Build src.zip -->
-					<execution>
-						<id>src</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<finalName>${project.artifactId}-src${packname}</finalName>
-							<appendAssemblyId>false</appendAssemblyId>
-							<descriptors>
-								<descriptor>assembly/src.xml</descriptor>
 							</descriptors>
 						</configuration>
 					</execution>

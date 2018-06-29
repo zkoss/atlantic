@@ -2,8 +2,31 @@ Atlantic 8.5.2
 * Features:
 
 * Bugs:
+  ZK-3908: vertical toolbar has sometimes <br> between items
+  ZK-3864: frozen overlap with position: relative/absolute
+  ZK-3852: chosenbox supports inplace edit
 
 * Upgrade Notes:
+
+  --------
+Atlantic 8.5.1.2
+Apr 10, 2018
+* Features:
+
+* Bugs:
+
+* Upgrade Notes:
+  Same as 8.5.1 (Version alignment)
+
+  --------
+Atlantic 8.5.1.1
+Mar 20, 2018
+* Features:
+
+* Bugs:
+
+* Upgrade Notes:
+  Same as 8.5.1 (Version alignment)
 
   --------
 Atlantic 8.5.1

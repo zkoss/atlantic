@@ -179,3 +179,23 @@
 .z-east-icon.z-icon-ellipsis-v {
 	display: none;
 }
+
+.z-north,
+.z-south,
+.z-west,
+.z-east {
+	&-title {
+		.fontStyle(@titleFontFamily, @baseFontSize, @fontWeightSemiBold, @baseTextColor);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+
+.z-west,
+.z-east {
+	&-title {
+		.transform('rotate(90deg)');
+		.applyCSS3('transform-origin', 'left bottom');
+	}
+}

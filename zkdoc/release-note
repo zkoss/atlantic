@@ -1,10 +1,13 @@
 Atlantic 8.5.2
+Jul 31, 2018
 * Features:
+  ZK-3529: Add title label to collapsed borderlayout region if title is set 
 
 * Bugs:
   ZK-3908: vertical toolbar has sometimes <br> between items
   ZK-3864: frozen overlap with position: relative/absolute
   ZK-3852: chosenbox supports inplace edit
+  ZK-4001: new feature title on collapse borderlayout region missing style in some themes
 
 * Upgrade Notes:
 

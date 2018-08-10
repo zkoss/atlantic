@@ -2,6 +2,7 @@ Atlantic 8.6.0
 * Features:
 
 * Bugs:
+  ZK-4000: Failed to drag and drop to a grid with firefox under atlantic theme
 
 * Upgrade Notes:
 

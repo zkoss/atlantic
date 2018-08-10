@@ -2,6 +2,7 @@ Atlantic 8.5.2.1
 * Features:
 
 * Bugs:
+  ZK-4001: new feature title on collapse borderlayout region missing style in some themes
 
 * Upgrade Notes:
 

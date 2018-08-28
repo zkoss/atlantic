@@ -1,0 +1,44 @@
+@import "~./zul/less/_header.less";
+
+.z-signature {
+	&-toolbar {
+		position: relative;
+		bottom: 20%;
+		font-size: 80%;
+		height: 20%;
+		width: 45%
+	}
+
+	&-tool-button {
+		height: 90%;
+		width: 33%;
+		.fontStyle(@contentFontFamily, @baseFontSize, @fontWeightSemiBold, @buttonColor);
+		border: 1px solid @buttonBorderColor;
+		background: @buttonBackground;
+		cursor: pointer;
+		white-space: nowrap;
+	
+		&:hover {
+			color: @hoverColor;
+			border-color: @hoverBorderColor;
+			background: @hoverBackground;
+			.boxShadow(inset 0 -1px 0 @hoverShadowColor);
+		}
+		&:focus {
+			color: @focusColor;
+			border-color: @focusBorderColor;
+			background: @focusBackground;
+			.boxShadow(none);
+		}
+		&:active {
+			color: @activeColor;
+			border-color: @activeBorderColor;
+			background: @activeBackground;
+			.boxShadow(inset 0px 1px 0 @activeShadowColor);
+		}
+	}
+
+	&-canvas {
+		box-sizing: border-box;
+	}
+}

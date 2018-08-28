@@ -8,6 +8,16 @@ Atlantic 8.6.0
 * Upgrade Notes:
 
   --------
+Atlantic 8.5.2.1
+Aug 28, 2018
+* Features:
+
+* Bugs:
+  ZK-4001: new feature title on collapse borderlayout region missing style in some themes
+
+* Upgrade Notes:
+
+  --------
 Atlantic 8.5.2
 Jul 31, 2018
 * Features:

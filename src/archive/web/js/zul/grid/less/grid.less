@@ -64,6 +64,11 @@
 	&-odd > .z-cell {
 		background: @meshStripeBackground;
 	}
+	// ZK-3138: ROD loading indicator
+	&-loading {
+		background: transparent no-repeat center;
+		.encodeThemeURL(background-image, '~./zul/img/misc/progress-large.gif');
+	}
 }
 //column
 .z-columns {

@@ -1,6 +1,7 @@
 Atlantic 8.6.0
 * Features:
   ZK-3958: Checkbox new molds (switch, toggle)
+  ZK-3138: Data loading indicator for ROD
   ZK-3963: Organigram component
 
 * Bugs:

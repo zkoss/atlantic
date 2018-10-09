@@ -5,6 +5,7 @@ Atlantic 8.6.0
   ZK-3963: Organigram component
   ZK-3962: A new component that can select a range of image
   ZK-3954: GoldenLayout component
+  ZK-3959: A new component for signing a signature
 
 * Bugs:
   ZK-4000: Failed to drag and drop to a grid with firefox under atlantic theme

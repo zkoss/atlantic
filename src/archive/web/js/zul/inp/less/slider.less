@@ -2,6 +2,8 @@
 
 .z-slider {
 	background-image: none;
+	overflow: hidden;
+	position: relative;
 
 	&-center {
 		cursor: pointer;
@@ -12,6 +14,36 @@
 		background: @sliderButtonBackground;
 		position: relative;
 		cursor: pointer;
+	}
+
+	&-knob-area {
+		stroke: @blueLighter;
+		data-angleOffset: 0;
+	}
+
+	&-knob-inner {
+		stroke: @blueLight;
+		data-angleOffset: 0;
+	}
+
+	&-knob-svg {
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	&-input {
+		border: 1px solid @inputBorderColor;
+		background: @inputBackground;
+		-webkit-appearance: none;
+		text-align: center;
+		position: absolute;
+		line-height: 1.5;
+		.fontStyle(@contentFontFamily, @baseFontSize, bold, @inputColor);
+
+		&:focus {
+			border-color: @focusBorderColor;
+		}
 	}
 
 	&-horizontal {

@@ -1,14 +1,5 @@
 @import "~./zul/less/_header.less";
 
-.userSelect() {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
 .z-toolbar.z-toolbar-tabs {
 	position: absolute;
 	top: 0;
@@ -33,7 +24,7 @@
 		top: 0;
 		cursor: pointer;
 		z-index: 25;
-		.userSelect();
+		.userSelectNone();
 		&:hover {
 			background: @tabHoverBackground;
 		}
@@ -318,7 +309,7 @@
 		cursor: pointer;
 		z-index: 15;
 		zoom: 1;
-		.userSelect();
+		.userSelectNone();
 
 		&:hover {
 			color: @tabHoverColor;

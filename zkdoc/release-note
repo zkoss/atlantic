@@ -10,6 +10,7 @@ Atlantic 8.6.0
 
 * Bugs:
   ZK-4000: Failed to drag and drop to a grid with firefox under atlantic theme
+  ZK-4095: Add a false positive check threshold on the barcode scanner
 
 * Upgrade Notes:
 

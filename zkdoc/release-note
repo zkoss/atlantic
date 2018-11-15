@@ -4,6 +4,7 @@ Atlantic 8.6.1
 * Bugs:
   ZK-4114: orgnode label missing font styles
   ZK-4116: Spinner/Timebox button active style not working
+  ZK-4048: chosenbox doesn't have consistent vertical align with other input components
 
 * Upgrade Notes:
 

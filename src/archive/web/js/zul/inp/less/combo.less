@@ -144,10 +144,6 @@
 			color: @hoverColor;
 			background: @hoverBackground;
 		}
-		&:active {
-			color: @activeColor;
-			background: @activeBackground;
-		}
 	}
 	// separator
 	> i {
@@ -165,7 +161,6 @@
 .z-timebox-disabled a,
 .z-spinner-disabled a,
 .z-doublespinner-disabled a {
-	&:active,
 	&:hover {
 		background: 0;
 	}
@@ -174,6 +169,20 @@
 		display: none;
 	}
 }
+// button active
+.btnActive(@parent) {
+	@selector: ~'@{parent}';
+	@{selector} {
+		&-active&-icon,
+		&-active&-icon:hover {
+			color: @activeColor;
+			background: @activeBackground;
+		}
+	}
+}
+.btnActive('.z-timebox');
+.btnActive('.z-spinner');
+.btnActive('.z-doublespinner');
 
 // Inplace editing
 .z-combobox-inplace .z-combobox-input,

@@ -4,6 +4,8 @@
 	background-image: none;
 	overflow: hidden;
 	position: relative;
+	width: 100%;
+	height: 100%;
 
 	&-center {
 		cursor: pointer;
@@ -49,6 +51,7 @@
 	&-horizontal {
 		height: @barHeight;
 		padding: (@barHeight - @baseHeight) / 2 0;
+		width: 200px;
 
 		.z-slider-center {
 			.size(100%, @baseHeight);
@@ -63,6 +66,7 @@
 	&-vertical {
 		width: @barWidth;
 		padding: 0 (@barWidth - @baseWidth) / 2;
+		height: 200px;
 
 		.z-slider-center {
 			.size(@baseWidth, 100%);

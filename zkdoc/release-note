@@ -5,6 +5,7 @@ Atlantic 8.6.1
   ZK-4114: orgnode label missing font styles
   ZK-4116: Spinner/Timebox button active style not working
   ZK-4048: chosenbox doesn't have consistent vertical align with other input components
+  ZK-4102: Slider flex sizing does not update the default 200px
 
 * Upgrade Notes:
 

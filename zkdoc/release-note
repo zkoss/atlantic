@@ -7,6 +7,7 @@ Atlantic 8.6.1
   ZK-4048: chosenbox doesn't have consistent vertical align with other input components
   ZK-4102: Slider flex sizing does not update the default 200px
   ZK-4140: The height of chosenbox should be the same as other input components
+  ZK-4072: selected tab not scrolling into view
 
 * Upgrade Notes:
 

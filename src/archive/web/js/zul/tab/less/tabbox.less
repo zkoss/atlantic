@@ -263,11 +263,12 @@
 		list-style-image: none;
 		list-style-position: outside;
 		list-style-type: none;
+		white-space: nowrap;
 	}
 }
 
 .z-tab {
-	display: block;
+	display: inline-block;
 	border: 1px solid @baseBorderColor;
 	padding: @paddingSize - 1;
 	line-height: @headerHeight - @paddingSize * 2;
@@ -275,7 +276,7 @@
 	text-align: center;
 	position: relative;
 	cursor: pointer;
-	float: left;
+	vertical-align: bottom;
 
 	&-content {
 		display: block;

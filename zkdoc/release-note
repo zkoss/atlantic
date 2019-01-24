@@ -8,7 +8,11 @@ Atlantic 8.6.1
   ZK-4102: Slider flex sizing does not update the default 200px
   ZK-4140: The height of chosenbox should be the same as other input components
   ZK-4072: selected tab not scrolling into view
+  ZK-4131: make menupopups with many menuitems scrollable
   ZK-4120: Upgrade/Align Fontawesome versions for all themes
+  ZK-4148: comboitem + popupwidth: hover style too short (also chosenbox)
+  ZK-4189: slider input looks ugly on FF (windows)
+  ZK-4153: additional slow hover styles in bigger listboxes (IE11)
 
 * Upgrade Notes:
 

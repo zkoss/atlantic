@@ -52,12 +52,12 @@
 				color: @activeColor;
 			}
 		}
-		input[disabled] + & {
-			&:hover,
-			&:active {
-				border-color: @inputBorderColor;
-				background: 0;
-			}
+	}
+	&-disabled &-button {
+		&:hover,
+		&:active {
+			border-color: @inputBorderColor;
+			background: 0;
 		}
 	}
 

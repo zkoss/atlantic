@@ -12,6 +12,9 @@
 	&-image {
 		height: @baseHeight;
 		background: @progressmeterBackground;
-		position: absolute;
+		font-size: 0;
+		display: inline-block;
+		vertical-align: top;  // prevent filled bug
+		line-height: 0;
 	}
 }

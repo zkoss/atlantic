@@ -49,12 +49,15 @@
 		> .z-tabs {
 			.z-tabs-content {
 				border-bottom: 1px solid @baseBorderColor;
+				white-space: nowrap;
 			}
 
 			.z-tab {
 				display: inline-block;
 				border-bottom-width: 0;
 				padding-bottom: @paddingSize;
+				float: none;
+				vertical-align: bottom;
 				
 				&.z-tab-selected {
 					.boxShadow(0 1px 0 #FFFFFF);
@@ -76,11 +79,14 @@
 		> .z-tabs {
 			.z-tabs-content {
 				border-top: 1px solid @baseBorderColor;
+				white-space: nowrap;
 			}
 			.z-tab {
 				display: inline-block;
 				border-top-width: 0;
 				padding-top: @paddingSize;
+				float: none;
+				vertical-align: bottom;
 				
 				&.z-tab-selected {
 					.boxShadow(0 -1px 0 #FFFFFF);
@@ -263,12 +269,11 @@
 		list-style-image: none;
 		list-style-position: outside;
 		list-style-type: none;
-		white-space: nowrap;
 	}
 }
 
 .z-tab {
-	display: inline-block;
+	display: block;
 	border: 1px solid @baseBorderColor;
 	padding: @paddingSize - 1;
 	line-height: @headerHeight - @paddingSize * 2;
@@ -276,7 +281,7 @@
 	text-align: center;
 	position: relative;
 	cursor: pointer;
-	vertical-align: bottom;
+	float: left;
 
 	&-content {
 		display: block;

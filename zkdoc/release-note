@@ -14,6 +14,7 @@ Atlantic 8.6.1
   ZK-4148: comboitem + popupwidth: hover style too short (also chosenbox)
   ZK-4189: slider input looks ugly on FF (windows)
   ZK-4153: additional slow hover styles in bigger listboxes (IE11)
+  ZK-3985: Listbox size change when click the listitem
 
 * Upgrade Notes:
 

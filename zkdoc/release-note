@@ -3,6 +3,7 @@ Atlantic 8.6.2
   ZK-4212: Frozen support right columns freeze
 
 * Bugs:
+  ZK-4239: Weird animation in Calendar
 
 * Upgrade Notes:
 

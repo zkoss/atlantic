@@ -9,11 +9,12 @@
 
 	&-input {
 		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @inputColor);
+		width: 100%;
 		height: @buttonHeight;
 		border: 1px solid @inputBorderColor;
-		border-right-width: 0;
 		margin: 0;
 		padding: @paddingSmall - 1 @paddingSize - 1;
+		padding-right: @paddingSize - 1 + @buttonWidth;
 		line-height: @buttonHeight - @paddingSmall * 2;
 		background: @inputBackground;
 
@@ -28,8 +29,15 @@
 		}
 	}
 
+	&-input-full {
+		padding-right: @paddingSize - 1;
+	}
+
 	&-button {
 		.displaySize(inline-block, @buttonWidth, @buttonHeight);
+		position: relative;
+		top: 0;
+		right: @buttonWidth;
 		border: 1px solid @inputBorderColor;
 		background: @inputBackground;
 		vertical-align: middle;

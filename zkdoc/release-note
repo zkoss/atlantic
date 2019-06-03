@@ -6,7 +6,6 @@ Atlantic 8.6.2
   ZK-4239: Weird animation in Calendar
   ZK-4240: Vertical tabbox in invisible comp has big height when onShow
   ZK-4251: menu arrow not centered in breeze
-  ZK-4227: Combobox is flickering when resizing
 
 * Upgrade Notes:
 

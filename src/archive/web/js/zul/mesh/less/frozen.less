@@ -12,9 +12,19 @@
 	&-inner {
 		overflow-x: scroll;
 		overflow-y: hidden;
-		float: right;
 		div {
 			height: 100%;
+		}
+	}
+	&-right {
+		overflow: hidden;
+		float: right;
+	}
+	&-right-col {
+		position: sticky !important;
+
+		&:first-child {
+			left: 0;
 		}
 	}
 }

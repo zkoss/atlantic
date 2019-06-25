@@ -7,9 +7,14 @@ Atlantic 9.0.0
 
   --------
 Atlantic 8.6.2
+June 25, 2019
 * Features:
+  ZK-4212: Frozen support right columns freeze
 
 * Bugs:
+  ZK-4239: Weird animation in Calendar
+  ZK-4240: Vertical tabbox in invisible comp has big height when onShow
+  ZK-4251: menu arrow not centered in breeze
 
 * Upgrade Notes:
 

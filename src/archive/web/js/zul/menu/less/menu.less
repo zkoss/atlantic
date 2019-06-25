@@ -144,7 +144,7 @@
 	&-icon {
 		color: @menuColor;
 		position: absolute;
-		top: @iconHeight / 2;
+		top: 15px;
 		right: 5px;
 	}
 	&-hover {
@@ -225,6 +225,7 @@
 	.z-menu-icon {
 		color: @menuPopupColor;
 		line-height: normal;
+		top: 12px;
 	}
 	.z-menu-content:hover,
 	.z-menu-content:hover .z-menu-icon,
@@ -234,10 +235,10 @@
 	.z-menuitem-icon {
 		.iconFontStyle(@checkedFontSize, @checkedColor);
 		display: none;
-		line-height: @checkedSize - 2;
+		line-height: @checkedSize;
 		position: absolute;
-		left: @checkedSize/2;
-		top: @checkedSize/2;
+		left: @menuImageSize/2;
+		top: @menuImageSize/2 + 2;
 	}
 	.z-menuseparator {
 		font-size: 1px;
@@ -259,7 +260,7 @@
 }
 //define checked menuitem effect in menupopup
 .z-menuitem-checkable .z-menuitem-image {
-	.size(@checkedSize, @checkedSize);
+	.size(@menuImageSize, @menuImageSize);
 	border: 1px solid @checkedBorderColor;
 	background: @checkedBackground;
 	top: 0;

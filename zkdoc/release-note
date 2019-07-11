@@ -2,6 +2,7 @@ Atlantic 9.0.0
 * Features:
 
 * Bugs:
+  ZK-4227: Combobox is flickering when resizing
 
 * Upgrade Notes:
 

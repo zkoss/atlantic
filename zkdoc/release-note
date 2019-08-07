@@ -1,10 +1,12 @@
 Atlantic 9.0.0
 * Features:
+  ZK-4358: Use newer zkless-engine
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing
 
 * Upgrade Notes:
+  While compiling LESS files, please remember to execute "npm install" at least once.
 
   --------
 Atlantic 8.6.2

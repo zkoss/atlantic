@@ -2,6 +2,7 @@ Atlantic 8.6.3
 * Features:
 
 * Bugs:
+  ZK-4353: nav renders a too large image loaded by "imageContent"
 
 * Upgrade Notes:
 

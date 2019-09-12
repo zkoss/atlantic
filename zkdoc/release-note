@@ -1,6 +1,7 @@
 Atlantic 9.0.0
 * Features:
   ZK-4358: Use newer zkless-engine
+  ZK-4365: Provide a drawer component
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing

@@ -9,6 +9,7 @@ Atlantic 9.0.0
   ZK-4374: Provide a multislider component
   ZK-4391: Provide an inputgroup component
   ZK-4386: Provide a anchronav component
+  ZK-4371: Provide a Toast utility
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing

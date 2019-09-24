@@ -12,6 +12,16 @@ Atlantic 9.0.0
   While compiling LESS files, please remember to execute "npm install" at least once.
 
   --------
+Atlantic 8.6.3
+Sep 24, 2019
+* Features:
+
+* Bugs:
+  ZK-4353: nav renders a too large image loaded by "imageContent"
+
+* Upgrade Notes:
+
+  --------
 Atlantic 8.6.2
 June 25, 2019
 * Features:

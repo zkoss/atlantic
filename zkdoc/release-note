@@ -3,6 +3,7 @@ Atlantic 9.0.0
   ZK-4358: Use newer zkless-engine
   ZK-4365: Provide a drawer component
   ZK-4371: Provide a Toast utility
+  ZK-4378: Provide a Checkbox new mold: Tristate
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing

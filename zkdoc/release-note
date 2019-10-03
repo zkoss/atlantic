@@ -4,6 +4,7 @@ Atlantic 9.0.0
   ZK-4365: Provide a drawer component
   ZK-4371: Provide a Toast utility
   ZK-4378: Provide a Checkbox new mold: Tristate
+  ZK-4363: beautify selectbox with CSS
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing

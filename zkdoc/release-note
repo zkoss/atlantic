@@ -5,6 +5,8 @@ Atlantic 9.0.0
   ZK-4371: Provide a Toast utility
   ZK-4378: Provide a Checkbox new mold: Tristate
   ZK-4363: beautify selectbox with CSS
+  ZK-4373: Provide a rangeslider component
+  ZK-4374: Provide a multislider component
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing

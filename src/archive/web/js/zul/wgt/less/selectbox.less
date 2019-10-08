@@ -1,17 +1,17 @@
 @import "~./zul/less/_header.less";
 
-@escapedIconColor: escape("@{baseTextColor}");
+@escapedIconColor: escape("@{inputColor}");
 @escapedActiveColor: escape("@{white}");
-@escapedDisabledColor: escape("@{disabledColor}");
+@escapedDisabledColor: escape("@{inputDisabledColor}");
 
 .z-selectbox {
 	font-family: @contentFontFamily;
 	font-size: @baseFontSize;
-	color: @baseTextColor;
+	color: @inputColor;
 
 	height: 32px;
 	min-width: 180px;
-	background-color: @baseBackground;
+	background-color: @inputBackground;
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20fill%3D%27@{escapedIconColor}%27%20height%3D%2724%27%20viewBox%3D%270%200%2024%2024%27%20width%3D%2724%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20d%3D%27M7%2010l5%205%205-5z%27%2F%3E%3C%2Fsvg%3E");
 	background-repeat: no-repeat;
 	background-position: top 50% right 0;
@@ -43,9 +43,9 @@
 	}
 
 	&[disabled] {
-		color: @disabledColor;
+		color: @inputDisabledColor;
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20fill%3D%27@{escapedDisabledColor}%27%20height%3D%2724%27%20viewBox%3D%270%200%2024%2024%27%20width%3D%2724%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20d%3D%27M7%2010l5%205%205-5z%27%2F%3E%3C%2Fsvg%3E");
-		background-color: @disabledBackground;
+		background-color: @inputDisabledBackground;
 		cursor: default;
 		border-color: @inputBorderColor;
 	}
@@ -59,7 +59,7 @@
 			background-image: none;
 			// popup close bug workaround
 			color: @baseTextColor;
-			background-color: @baseBackground;
+			background-color: @inputBackground;
 		}
 		&[disabled] {
 			background-image: none;

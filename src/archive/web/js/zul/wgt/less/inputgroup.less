@@ -1,0 +1,33 @@
+@import "~./zul/less/_header.less";
+
+.z-inputgroup {
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+
+	&-text {
+		display: -ms-flexbox;
+		display: flex;
+		background: @inputgroupTextBackgroundColor;
+		border: 1px solid @inputBorderColor;
+		padding: 0 12px;
+		min-height: 32px; // same as .z-textbox
+
+		> :nth-child(n) {
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+	}
+
+	&-vertical {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+
+	&:not(&-vertical) {
+		> :nth-child(n) {
+			height: auto;
+		}
+	}
+}

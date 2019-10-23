@@ -14,6 +14,7 @@ Atlantic 9.0.0
   ZK-4380: Provide a Searchbox component
   ZK-4375: Provide a stepbar component
   ZK-4398: Provide PortalChildren title and frame design
+  ZK-4377: Provide a Linelayout Component
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing

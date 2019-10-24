@@ -11,6 +11,7 @@ Atlantic 9.0.0
   ZK-4386: Provide a anchronav component
   ZK-4371: Provide a Toast utility
   ZK-4395: Provide a pdfviewer component
+  ZK-4380: Provide a Searchbox component
 
 * Bugs:
   ZK-4227: Combobox is flickering when resizing

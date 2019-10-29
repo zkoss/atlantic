@@ -17,3 +17,130 @@
 .z-portalchildren {
 	-ms-zoom: 1;
 }
+.z-portallayout-horizontal {
+	> .z-portalchildren {
+		height: 100%;
+	}
+}
+.z-portallayout-horizontal .z-portalchildren-content {
+	> .z-panel,
+	> .z-panel-move-block {
+		float: left;
+	}
+}
+
+.z-portalchildren {
+	&-counter {
+		display: none;
+		border-radius: @portalchildrenCounterRadius;
+		padding: 0 @portalchildrenCounterPadding;
+		margin-right: @portalchildrenCounterPadding;
+		background: @portalchildrenCounterBackground;
+		font-size: 14px;
+		font-weight: 700;
+
+		&-on {
+			display: inline;
+		}
+	}
+	&-frame {
+		border: 1px solid @portalchildrenFrameBorderColor;
+		border-radius: @portalchildrenFrameRadius;
+		background: @portalchildrenFrameBackgroundColor;
+		overflow: hidden;
+		padding: @portalchildrenFramePadding;
+		padding-bottom: 0;
+		margin-right: @portalchildrenFrameMargin;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		> .z-portalchildren {
+			&-title {
+				display: block;
+			}
+			&-content .z-panel {
+				background: @portalchildrenFramePanelBackgroundColor;
+				margin-bottom: @portalchildrenFramePanelPadding;
+				position: relative;
+
+				&:last-child {
+					margin-bottom: @portalchildrenFramePadding;
+				}
+				&-head {
+					padding: 0;
+					border: 0;
+				}
+				&-header {
+					color: @portalchildrenFramePanelHeaderTextColor;
+					padding: @portalchildrenFramePanelHeaderPadding;
+					font-size: @portalchildrenFramePanelHeaderTextSize;
+					font-weight: 400;
+				}
+				&-body {
+					padding: 0;
+				}
+				&-noframe {
+					border: 1px solid @portalchildrenFrameBorderColor;
+				}
+				&-noborder {
+					border: 0;
+				}
+				&-drag-button {
+					display: block;
+					color: @portalchildrenFrameDragButtonColor;
+					width: @portalchildrenFrameDragButtonSize;
+					height: @portalchildrenFrameDragButtonSize;
+					float: left;
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					z-index: 1;
+				}
+
+				.z-panelchildren {
+					padding: @portalchildrenFramePanelChildrenPadding;
+					border: 0;
+
+					&-noheader {
+						border: 0;
+					}
+				}
+
+			}
+		}
+	}
+	&-title {
+		display: none;
+		.fontStyle(@portalchildrenFrameTitleFontFamily, @portalchildrenFrameTitleFontSize, normal, @portalchildrenFrameTitleFontColor);
+		border: 0;
+		overflow: hidden;
+		padding-bottom: @portalchildrenFramePadding;
+	}
+}
+
+.z-portallayout-horizontal {
+	> .z-portalchildren {
+		&-frame {
+			float: left;
+			clear: both;
+			margin-bottom: @portalchildrenFramePadding;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			> .z-portalchildren {
+				&-content > .z-panel {
+					margin-right: @portalchildrenFramePanelPadding;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}

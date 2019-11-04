@@ -5,3 +5,4 @@ target
 *.dsp
 *.dsp.src
 test
+node_modules

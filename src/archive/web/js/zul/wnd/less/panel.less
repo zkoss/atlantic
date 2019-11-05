@@ -28,6 +28,10 @@
 	}
 	&-drag-button {
 		display: none;
+
+		+ .z-panel-body {
+			height: 100%;
+		}
 	}
 	&-body {
 		border: 1px solid @baseBorderColor;
@@ -35,10 +39,6 @@
 		padding: @paddingSize @paddingLarge - 1 @paddingSize - 1;
 		background: @baseBackground;
 		overflow: hidden;
-
-		&:first-child {
-			height: 100%;
-		}
 	}
 
 	&-top .z-toolbar {

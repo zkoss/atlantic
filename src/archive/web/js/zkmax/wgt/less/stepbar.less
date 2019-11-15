@@ -4,7 +4,6 @@
 	background: @white;
 	overflow: hidden;
 	padding: @stepbarPadding;
-	align-items: center;
 	display: flex;
 	display: -ms-flexbox;
 	font-family: @titleFontFamily;
@@ -28,6 +27,7 @@
 	&:first-child,
 	&:first-child:before {
 		flex: 0;
+		white-space: nowrap;
 	}
 
 	&:before {
@@ -66,7 +66,6 @@
 		font-size: @stepFontSize;
 		line-height: @stepSize;
 		vertical-align: top;
-		white-space: nowrap;
 	}
 
 	&-active &-icon,
@@ -128,15 +127,31 @@
 
 	.z-step:before {
 		position: absolute;
+		width: 50%;
 		top: 23px;
-		left: 13px;
-		right: -11px;
-		transform: translateX(-50%);
+		left: -14px;
 		margin: 0;
 		z-index: -1;
 	}
 
-	.z-step:first-child:before {
+	.z-step:after {
+		content: ' ';
+		height: @stepbarSeparatorSize;
+		background-color: @stepInactiveColor;
+		position: absolute;
+		width: 50%;
+		top: 23px;
+		right: -14px;
+		margin: 0;
+		z-index: -1;
+	}
+
+	&.z-stepbar-linear .z-step-complete:after {
+		background-color: @stepActiveColor;
+	}
+
+	.z-step:first-child:before,
+	.z-step:last-child:after {
 		width: 0;
 	}
 

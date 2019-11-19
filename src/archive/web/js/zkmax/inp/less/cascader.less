@@ -82,6 +82,7 @@
 	}
 
 	&-popup {
+		min-height: @cascaderPopupItemHeight;
 		position: absolute;
 		z-index: 1000;
 		border: 1px solid @cascaderPopupBorderColor;
@@ -130,6 +131,14 @@
 		> label {
 			display: block;
 		}
+
+		.z-cascader-icon {
+			position: static;
+			line-height: @cascaderPopupItemHeight;
+			transform: none;
+			float: right;
+			margin-left: 4px;
+		}
 	}
 
 	&-item&-selected {
@@ -139,6 +148,9 @@
 	&-item&-active, &-item:hover {
 		background-color: @cascaderPopupItemHoverBackgroundColor;
 		color: @white;
+		.z-cascader-icon {
+			color: @white;
+		}
 	}
 
 	&-item &-icon {

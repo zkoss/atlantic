@@ -11,13 +11,8 @@
 		border: 1px solid @inputBorderColor;
 		padding: 0 12px;
 		min-height: 32px; // same as .z-textbox
-
-		> :nth-child(n) {
-			display: -ms-flexbox;
-			display: flex;
-			-ms-flex-align: center;
-			align-items: center;
-		}
+		-ms-flex-align: center;
+		align-items: center;
 	}
 
 	&-vertical {
@@ -26,7 +21,7 @@
 	}
 
 	&:not(&-vertical) {
-		> :nth-child(n) {
+		> :nth-child(n) { // "> :nth-child(n)" has a higher specificity than "> *"
 			height: auto;
 		}
 	}

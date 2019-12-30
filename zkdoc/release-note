@@ -2,6 +2,7 @@ Atlantic 9.0.1
 * Features:
 
 * Bugs:
+  ZK-4466: toast covered by borderlayout
 
 * Upgrade Notes:
 

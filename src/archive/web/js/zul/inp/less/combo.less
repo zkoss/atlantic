@@ -11,6 +11,7 @@
 	line-height: normal; //reset for inside other component
 	white-space: nowrap;
 	clear: both;
+	position: relative;
 
 	&-input {
 		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @inputColor);
@@ -43,9 +44,9 @@
 
 	&-button {
 		.displaySize(inline-block, @buttonWidth, @buttonHeight);
-		position: relative;
+		position: absolute;
 		top: 0;
-		right: @buttonWidth;
+		right: 0;
 		border: 1px solid @inputBorderColor;
 		background: @inputBackground;
 		vertical-align: middle;

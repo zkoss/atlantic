@@ -3,6 +3,7 @@ Atlantic 9.0.1
 
 * Bugs:
   ZK-4466: toast covered by borderlayout
+  ZK-4475: Combobox causes overflow after ZK-4227
 
 * Upgrade Notes:
 

@@ -16,7 +16,7 @@
 	<name>The Atlantic Theme</name>
 	<url>http://www.zkoss.org/themes/atlantic</url>
 	<scm>
-		<url>http://mavensync.zkoss.org/maven2</url>
+		<url>https://mavensync.zkoss.org/maven2</url>
 	</scm>
 	<description>The Atlantic Theme</description>
 	<licenses>
@@ -48,18 +48,18 @@
 		<repository>
 			<id>ZK CE</id>
 			<name>ZK CE Repository</name>
-			<url>http://mavensync.zkoss.org/maven2</url>
+			<url>https://mavensync.zkoss.org/maven2</url>
 		</repository>
 		<repository>
 			<id>ZK PE EE Evaluation</id>
-			<url>http://mavensync.zkoss.org/eval/</url>
+			<url>https://mavensync.zkoss.org/eval/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>zkmaven</id>
 			<name>ZK Maven Plugin Repository</name>
-			<url>http://mavensync.zkoss.org/maven2/</url>
+			<url>https://mavensync.zkoss.org/maven2/</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<dependencies>

@@ -1,5 +1,6 @@
 Atlantic 8.6.4
 * Features:
+  ZK-4481: Configure repositories to use HTTPS
 
 * Bugs:
 

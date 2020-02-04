@@ -40,6 +40,16 @@ Dec 10, 2019
   While compiling LESS files, please remember to execute "npm install" at least once.
 
   --------
+Atlantic 8.6.4
+Feb 4, 2020
+* Features:
+  ZK-4481: Configure repositories to use HTTPS
+
+* Bugs:
+
+* Upgrade Notes:
+
+  --------
 Atlantic 8.6.3
 Sep 24, 2019
 * Features:

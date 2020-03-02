@@ -1,6 +1,7 @@
 Atlantic 9.0.1
 * Features:
   ZK-4481: Configure repositories to use HTTPS
+  ZK-4421: toast style improvement
 
 * Bugs:
   ZK-4466: toast covered by borderlayout

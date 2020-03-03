@@ -165,13 +165,42 @@
 	will-change: opacity;
 
 	&-content {
-		.z-notification-content();
+		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @notificationColor);
+		width: 320px;
+		min-height: 51px;
+		padding: 16px 40px 16px 45px;
+		position: relative;
+		overflow: hidden;
 	}
 	&-close {
-		.z-notification-close();
+		font-size: @fontSizeLarge;
+		.displaySize(block, @smallIconWidth, @smallIconHeight);
+		position: absolute;
+		top: 50%;
+		right: 12px;
+		cursor: pointer;
+		margin-top: -@smallIconHeight / 2;
+
+		&:hover {
+			background: @baseBackground;
+		}
 	}
 	&-icon {
-		.z-notification-icon();
+		position: absolute;
+		z-index: 1;
+
+		&.z-icon-times {
+			left: 2px;
+		}
+
+		&.z-icon-times-circle,
+		&.z-icon-exclamation-circle,
+		&.z-icon-info-circle {
+			top: 50%;
+			font-size: @iconSize*2;
+			margin-top: -@iconSize*2/2;
+			left: 12px;
+		}
 	}
 	&-error {
 		.z-toast-content {

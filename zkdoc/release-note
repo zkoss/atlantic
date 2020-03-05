@@ -10,6 +10,7 @@ Atlantic 9.0.1
   ZK-4465: vflex inside drawer has no effect
   ZK-4409: combobutton misaligned vertically
   ZK-4457: coachmark width doesn't fit the content by default
+  ZK-4444: toolbarbutton vertical alignment
 
 * Upgrade Notes:
 

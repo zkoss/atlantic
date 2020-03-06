@@ -12,6 +12,7 @@ Atlantic 9.0.1
   ZK-4457: coachmark width doesn't fit the content by default
   ZK-4444: toolbarbutton vertical alignment
   ZK-4521: coachmark setWidth/Height CSS issue
+  ZK-4452: ZK9 input-based components error style border is wrong
 
 * Upgrade Notes:
 

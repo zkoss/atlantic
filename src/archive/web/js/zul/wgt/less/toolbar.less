@@ -109,6 +109,12 @@
 	position: relative;
 	cursor: pointer;
 
+	&:before {
+		content: '';
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
 	&:hover {
 		border-color: @hoverBorderColor;
 		background: @hoverBackground;
@@ -146,6 +152,10 @@
 	&-content {
 		.fontStyle(@contentFontFamily, @baseFontSize, @fontWeightSemiBold, @toolbarButtonColor);
 		white-space:nowrap;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		vertical-align: middle;
 	}
 }
 

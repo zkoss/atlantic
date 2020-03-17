@@ -14,6 +14,7 @@ Atlantic 9.0.1
   ZK-4521: coachmark setWidth/Height CSS issue
   ZK-4452: ZK9 input-based components error style border is wrong
   ZK-4445: toolbarbutton with fixed width cut off
+  ZK-4503: barcode-scanner: quagga reduced scan resolution
 
 * Upgrade Notes:
 

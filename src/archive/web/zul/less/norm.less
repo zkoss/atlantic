@@ -232,11 +232,15 @@ input[type="checkbox"] {
 	.size(100%, 100%);
 	background: @maskBackground;
 	.opacity(0.6);
-	position: absolute;
 	top: 0;
 	left: 0;
 }
+.z-temp,
+.z-modal-mask {
+	position: fixed;
+}
 .z-apply-mask {
+	position: absolute;
 	z-index: 89000;
 }
 .z-initing {

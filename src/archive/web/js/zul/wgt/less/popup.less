@@ -1,17 +1,16 @@
 @import "~./zul/less/_header.less";
 
 .z-popup {
-	background: @popupBackground;
 	position: absolute;
 	top: 0;
 	left: 0;
-	overflow: hidden;
 
 	&-content {
 		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @popupColor);
 		height: 100%;
 		padding: @paddingSize;
 		line-height: normal;
+		background: @popupBackground;
 	}
 }
 

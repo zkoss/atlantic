@@ -5,16 +5,17 @@
 	<artifactId>atlantic</artifactId>
 	<version>9.1.0-SNAPSHOT</version>
 	<properties>
-		<zk.version>8.6.0.1-Eval</zk.version>
+		<zk.version>9.0.0-Eval</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}</packname>
 		<zktheme.resources>${project.basedir}/src/archive</zktheme.resources>
 		<zktheme.web.resources>${zktheme.resources}/web</zktheme.web.resources>
 		<zktheme.theme.outputDirectory>${project.build.outputDirectory}/web/${project.artifactId}</zktheme.theme.outputDirectory>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<packaging>jar</packaging>
 	<name>The Atlantic Theme</name>
-	<url>http://www.zkoss.org/themes/atlantic</url>
+	<url>https://www.zkoss.org/themes/atlantic</url>
 	<scm>
 		<url>https://mavensync.zkoss.org/maven2</url>
 	</scm>
@@ -22,7 +23,7 @@
 	<licenses>
 		<license>
 			<name>GNU General Public License, Version 2.0</name>
-			<url>http://www.gnu.org/licenses/gpl.html</url>
+			<url>https://www.gnu.org/licenses/gpl.html</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -31,16 +32,16 @@
 			<id>zkteam</id>
 			<name>ZK Team</name>
 			<email>info@zkoss.org</email>
-			<url>http://www.zkoss.org</url>
+			<url>https://www.zkoss.org</url>
 			<organization>Potix</organization>
-			<organizationUrl>http://www.zkoss.org</organizationUrl>
+			<organizationUrl>https://www.zkoss.org</organizationUrl>
 			<roles>
 				<role>architect</role>
 				<role>developer</role>
 			</roles>
 			<timezone>8</timezone>
 			<properties>
-				<picUrl>http://www.zkoss.org</picUrl>
+				<picUrl>https://www.zkoss.org</picUrl>
 			</properties>
 		</developer>
 	</developers>
@@ -55,13 +56,6 @@
 			<url>https://mavensync.zkoss.org/eval/</url>
 		</repository>
 	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>zkmaven</id>
-			<name>ZK Maven Plugin Repository</name>
-			<url>https://mavensync.zkoss.org/maven2/</url>
-		</pluginRepository>
-	</pluginRepositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.zkoss.common</groupId>

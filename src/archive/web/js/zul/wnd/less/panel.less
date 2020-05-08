@@ -58,15 +58,22 @@
 		padding: @paddingSmall;
 	}
 
+	&-icons {
+		display: inline-block;
+		float: right;
+	}
+
 	&-icon {
 		.iconFontStyle(@iconSize, @iconColor);
-		.displaySize(block, @iconWidth, @iconHeight);
+		.displaySize(inline-block, @iconWidth, @iconHeight);
 		margin-top: (@headerHeight - @paddingSize * 2 - @iconHeight) / 2;
 		line-height: @iconHeight;
 		text-align: center;
 		cursor: pointer;
 		overflow: hidden;
-		float: right;
+		border: none;
+		background: transparent;
+		padding: 0;
 
 		&:hover {
 			color: @hoverColor;

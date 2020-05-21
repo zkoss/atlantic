@@ -2,6 +2,7 @@ Atlantic 9.1.0
 * Features:
 
 * Bugs:
+  ZK-4550: an inner tab disappears when using nested tabbox with different orients
 
 * Upgrade Notes:
 

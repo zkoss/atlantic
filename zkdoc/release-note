@@ -1,6 +1,7 @@
 Atlantic 9.5.0
 * Features:
   ZK-4598: Enhance the accessibility of components by following WCAG 2.0
+  ZK-4497: searchbox: improve clearing selection, key shortcut / clear icon
 
 * Bugs:
   ZK-4550: an inner tab disappears when using nested tabbox with different orients

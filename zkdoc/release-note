@@ -5,6 +5,7 @@ Atlantic 9.5.0
 
 * Bugs:
   ZK-4550: an inner tab disappears when using nested tabbox with different orients
+  ZK-4394: atlantic theme - cursor style for sortable/sizable columns
 
 * Upgrade Notes:
 

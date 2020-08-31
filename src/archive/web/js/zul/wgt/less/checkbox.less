@@ -14,14 +14,14 @@
 		display: none;
 	}
 	&-switch > &-mold {
-		margin: 4px;
+		margin: 2px 4px 4px;
 		position: relative;
 		width: 50px;
 		height: 29px;
 		transition: .4s;
 		border-radius: 29px;
 		display: inline-block;
-		float: left;
+		vertical-align: middle;
 
 		&:before {
 			content: "";
@@ -42,7 +42,6 @@
 	}
 	&-switch > &-content {
 		display: inline-block;
-		.transform('translateY(50%)');
 	}
 	&-switch-off > &-mold {
 		background-color: @disabledColor;
@@ -65,17 +64,16 @@
 		display: none;
 	}
 	&-toggle > &-mold {
-		margin: 4px;
+		margin: 0 4px 4px;
 		width: 30px;
 		height: 30px;
 		border-radius: 4px;
 		transition: .1s;
 		display: inline-block;
-		float: left;
+		vertical-align: middle;
 	}
 	&-toggle > &-content {
 		display: inline-block;
-		.transform('translateY(50%)');
 	}
 	&-toggle-off > &-mold {
 		background-color: @disabledColor;

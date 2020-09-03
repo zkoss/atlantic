@@ -2,6 +2,7 @@ Atlantic 9.5.0
 * Features:
   ZK-4598: Enhance the accessibility of components by following WCAG 2.0
   ZK-4497: searchbox: improve clearing selection, key shortcut / clear icon
+  ZK-4622: Remove header border div in listbox/grid/tree
 
 * Bugs:
   ZK-4550: an inner tab disappears when using nested tabbox with different orients
@@ -10,6 +11,7 @@ Atlantic 9.5.0
   ZK-4585: iceblue_c misaligned switch/toggle labels
 
 * Upgrade Notes:
+  + Due to ZK-4622, the DIV of grid/listbox/tree header border is removed.
 
   --------
 Atlantic 9.1.0

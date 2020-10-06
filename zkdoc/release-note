@@ -2,6 +2,7 @@ Atlantic 9.5.0.1
 * Features:
 
 * Bugs:
+  ZK-4690: za11y portallayout popup styles missing for classic themes
 
 * Upgrade Notes:
 

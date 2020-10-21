@@ -3,6 +3,7 @@ Atlantic 9.5.1
 
 * Bugs:
   ZK-4690: za11y portallayout popup styles missing for classic themes
+  ZK-4668: combo inputs paddings are incorrect in tablet
 
 * Upgrade Notes:
 

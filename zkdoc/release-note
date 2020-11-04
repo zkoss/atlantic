@@ -5,6 +5,7 @@ Atlantic 9.5.1
   ZK-4690: za11y portallayout popup styles missing for classic themes
   ZK-4668: combo inputs paddings are incorrect in tablet
   ZK-4704: Atlantic missing tablet css
+  ZK-4702: Tree with rows more than need not working properly with Chrome/FireFox/Safari
 
 * Upgrade Notes:
 

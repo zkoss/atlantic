@@ -11,6 +11,26 @@ Atlantic 9.5.1
 * Upgrade Notes:
 
   --------
+Atlantic 9.5.0.2
+Nov 24, 2020
+* Features:
+
+* Bugs:
+
+* Upgrade Notes:
+  Same as 9.5.0.1 (Version alignment)
+
+  --------
+Atlantic 9.5.0.1
+Oct 13, 2020
+* Features:
+
+* Bugs:
+  ZK-4690: za11y portallayout popup styles missing for classic themes
+
+* Upgrade Notes:
+
+  --------
 Atlantic 9.5.0
 Sep 29, 2020
 * Features:

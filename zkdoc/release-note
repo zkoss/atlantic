@@ -8,6 +8,7 @@ Atlantic 9.5.1
   ZK-4702: Tree with rows more than need not working properly with Chrome/FireFox/Safari
   ZK-4684: menuitem icon alignment
   ZK-4724: combowidget button icon alignment
+  ZK-4733: a scroll thumb keeps moving itself during scrolling
 
 * Upgrade Notes:
 

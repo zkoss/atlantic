@@ -9,7 +9,6 @@ Atlantic 9.5.1
   ZK-4684: menuitem icon alignment
   ZK-4724: combowidget button icon alignment
   ZK-4733: a scroll thumb keeps moving itself during scrolling
-  ZK-4760: default error message box hard coded width (too small)
 
 * Upgrade Notes:
 

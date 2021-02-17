@@ -1,3 +1,11 @@
+Atlantic 9.6.0
+* Features:
+  ZK-4330: provide select-all checkbox in tree component
+* Bugs:
+
+* Upgrade Notes:
+
+  --------
 Atlantic 9.5.1
 * Features:
 

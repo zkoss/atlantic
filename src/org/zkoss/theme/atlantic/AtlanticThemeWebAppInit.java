@@ -13,15 +13,9 @@ public class AtlanticThemeWebAppInit implements WebAppInit {
 	private final static int ATLANTIC_PRIORITY = 1000;
 
 	public void init(WebApp wapp) throws Exception {
-		//ZK-2931 custom theme provider and library property for turning on/off the usage of google font
-		wapp.getConfiguration().setThemeProvider(new AtlanticCEThemeProvider());
+		wapp.getConfiguration().addThemeURIHandler(new AtlanticThemeURIHandler());
 		Themes.register(ATLANTIC_NAME, ATLANTIC_DISPLAY, ATLANTIC_PRIORITY);
-		String edition = WebApps.getEdition();
-		if ("PE".equals(edition)) {
-			wapp.getConfiguration().setThemeProvider(new AtlanticPEThemeProvider());
-		}
-		if ("EE".equals(edition)) {
-			wapp.getConfiguration().setThemeProvider(new AtlanticEEThemeProvider());
+		if ("EE".equals(WebApps.getEdition())) {
 			Themes.register(ResponsiveThemeRegistry.TABLET_PREFIX + ATLANTIC_NAME, ATLANTIC_DISPLAY, ATLANTIC_PRIORITY);
 		}
 	}

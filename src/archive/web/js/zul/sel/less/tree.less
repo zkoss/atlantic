@@ -121,6 +121,26 @@
 	&-sizing .z-treecol-content {
 		cursor: e-resize;
 	}
+	&-checkable {
+		.displaySize(inline-block, @checkedSize, @checkedSize);
+		border: 1px solid @checkedBorderColor;
+		background: @checkedBackground;
+		vertical-align: text-top;
+
+		.z-treecol-icon {
+			display: none;
+			cursor: pointer;
+		}
+		&.z-treecol-checked .z-treecol-icon {
+			.iconFontStyle(@checkedFontSize, @checkedColor);
+			display: block;
+			margin-top: -@checkedFontSize / 2;
+			line-height: normal;
+			text-align: center;
+			position: relative;
+			top: 50%;
+		}
+	}
 }
 // ZK-2151: use strict selector to prevent nest problem
 //tree row and cell

@@ -2,6 +2,7 @@ Atlantic 9.6.0
 * Features:
   ZK-4330: provide select-all checkbox in tree component
   ZK-4795: Grid/Listbox/Tree supports sticky column headers
+  ZK-4783: Modify error message box CSS design (provide scrollbar while word-break fail)
 
 * Bugs:
 

@@ -79,13 +79,18 @@
 		text-align: center;
 	}
 
-	&-disabled {
+	&-disabled, &-readonly {
 		.opacity(@disabledOpacity);
 		& * {
-			color: @inputDisabledColor !important;
 			background: @inputDisabledBackground !important;
 			cursor: default !important;
 		}
+	}
+	&-disabled > input {
+		color: @inputDisabledColor;
+	}
+	&-readonly > &-input&-focus, &-readonly > &-focus + &-button {
+		border-color: @readonlyBorderColor;
 	}
 
 	&-invalid {
@@ -170,7 +175,10 @@
 
 .z-timebox-disabled a,
 .z-spinner-disabled a,
-.z-doublespinner-disabled a {
+.z-doublespinner-disabled a,
+.z-timebox-readonly a,
+.z-spinner-readonly a,
+.z-doublespinner-readonly a {
 	&:hover {
 		background: 0;
 	}

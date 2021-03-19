@@ -4,6 +4,7 @@ Atlantic 9.6.0
   ZK-4795: Grid/Listbox/Tree supports sticky column headers
 
 * Bugs:
+  ZK-4600: readonly spinner buttons should not be clickable
 
 * Upgrade Notes:
 

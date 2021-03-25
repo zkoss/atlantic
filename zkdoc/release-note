@@ -3,6 +3,7 @@ Atlantic 9.6.0
   ZK-4330: provide select-all checkbox in tree component
   ZK-4795: Grid/Listbox/Tree supports sticky column headers
   ZK-4783: Modify error message box CSS design (provide scrollbar while word-break fail)
+  ZK-4745: Datebox supports to display with custom calendar system (e.g. Minguo) year
 
 * Bugs:
 

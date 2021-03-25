@@ -62,6 +62,10 @@
 	}
 	&-decade {
 		min-height: unit(48 * 3, px);
+
+		.z-calendar-cell {
+			text-align: left;
+		}
 	}
 	&-month,
 	&-year {
@@ -72,13 +76,15 @@
 		}
 	}
 	&-cell {
-		.size(@barWidth, @barHeight);
+		min-width: @barWidth;
+		height: @barHeight;
 		border-width: 1px 0 0 1px;
 		border-style: solid;
 		border-color: @baseBorderColor;
 		background: @baseBackground;
 		text-align: center;
 		cursor: pointer;
+		padding: 0 4px;
 
 		&:first-child {
 			border-left-width: 0;

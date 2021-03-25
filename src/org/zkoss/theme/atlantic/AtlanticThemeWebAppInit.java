@@ -8,9 +8,9 @@ import org.zkoss.zul.theme.Themes;
 
 public class AtlanticThemeWebAppInit implements WebAppInit {
 
-	private final static String ATLANTIC_NAME = "atlantic";
-	private final static String ATLANTIC_DISPLAY = "Atlantic";
-	private final static int ATLANTIC_PRIORITY = 1000;
+	/*package*/ static final String ATLANTIC_NAME = "atlantic";
+	/*package*/ static final String ATLANTIC_DISPLAY = "Atlantic";
+	/*package*/ static final int ATLANTIC_PRIORITY = 1000;
 
 	public void init(WebApp wapp) throws Exception {
 		wapp.getConfiguration().addThemeURIHandler(new AtlanticThemeURIHandler());

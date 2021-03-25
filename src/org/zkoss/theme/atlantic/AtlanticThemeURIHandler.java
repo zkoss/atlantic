@@ -11,8 +11,10 @@ Copyright (C) 2021 Potix Corporation. All Rights Reserved.
 */
 package org.zkoss.theme.atlantic;
 
+import static org.zkoss.theme.atlantic.AtlanticThemeWebAppInit.ATLANTIC_NAME;
 import org.zkoss.html.StyleSheet;
 import org.zkoss.lang.Library;
+import org.zkoss.web.fn.ThemeFns;
 import org.zkoss.zk.ui.Execution;
 import org.zkoss.zk.ui.util.ThemeURIHandler;
 import org.zkoss.zk.ui.util.ThemeURIModifier;
@@ -29,7 +31,9 @@ public class AtlanticThemeURIHandler implements ThemeURIHandler {
 
 	@Override
 	public void modifyThemeURIs(Execution exec, ThemeURIModifier modifier) {
-		if (!Boolean.parseBoolean(Library.getProperty(DONT_USE_GOOGLE_FONT))) { //false by default
+		// DONT_USE_GOOGLE_FONT is false by default
+		// ZK-4801: the google font should only be added when atlantic theme is active
+		if (!Boolean.parseBoolean(Library.getProperty(DONT_USE_GOOGLE_FONT)) && ATLANTIC_NAME.equals(ThemeFns.getCurrentTheme())) {
 			//ZK-2931 can't start the url with "//", encodeURL will prepend
 			//current context path if no scheme were given
 			modifier.add(new StyleSheet(exec.getScheme() + "://fonts.googleapis.com/css?family=Open+Sans", "text/css"));

@@ -8,6 +8,7 @@ Atlantic 9.6.0
 
 * Bugs:
   ZK-4801: Atlantic: adds google-font for all themes
+  ZK-4828: remove externally loaded resources with internal refs.
 
 * Upgrade Notes:
 

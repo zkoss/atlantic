@@ -90,7 +90,7 @@
 .z-messagebox {
 	display: inline-block;
 	white-space: normal;
-	padding: 0px 16px 16px;
+	width: @messageboxWindowWidth - @messageboxIconMarginLeft - @messageboxIconSize - @messageboxPaddingHorizontal;
 
 	&-window .z-window-content {
 		padding: 16px 0px;
@@ -98,11 +98,13 @@
 	}
 
 	&-window {
-		width: 440px;
+		width: @messageboxWindowWidth;
 	}
 
 	.z-label {
 		.fontStyle(@contentFontFamily, @baseFontSize, @baseFontWeight, @baseTextColor);
+		display: inline-block;
+		padding: @messageboxPadding;
 	}
 
 	&-buttons {
@@ -120,9 +122,9 @@
 		min-width: 48px;
 	}
 	&-icon {
-		.size(32px, 32px);
+		.size(@messageboxIconSize, @messageboxIconSize);
 		background-repeat: no-repeat;
-		margin-left: 16px;
+		margin-left: @messageboxIconMarginLeft;
 		display: inline-block;
 		vertical-align: top;
 	}

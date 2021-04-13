@@ -6,6 +6,7 @@ Atlantic 9.6.0
   ZK-4745: Datebox supports to display with custom calendar system (e.g. Minguo) year
   ZK-4771: Provide a way to add theme-uri without extends any existing ThemeProvider
   ZK-2299: Frozen column support on tablet device
+  ZK-4777: signature can have a background image
 
 * Bugs:
   ZK-4801: Atlantic: adds google-font for all themes

@@ -7,6 +7,7 @@ Atlantic 9.6.0
   ZK-4771: Provide a way to add theme-uri without extends any existing ThemeProvider
   ZK-2299: Frozen column support on tablet device
   ZK-4844: Replace spacer.gif by a base64 encoded string
+  ZK-4858: slider knob styles contain invalid css property
 
 * Bugs:
   ZK-4801: Atlantic: adds google-font for all themes

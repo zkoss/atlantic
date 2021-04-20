@@ -14,6 +14,7 @@ Atlantic 9.6.0
   ZK-4801: Atlantic: adds google-font for all themes
   ZK-4828: remove externally loaded resources with internal refs.
   ZK-4840: navbar navitem icon/text alignment
+  ZK-4850: Autopaging row height calculation incorrect by 1px
 
 * Upgrade Notes:
 

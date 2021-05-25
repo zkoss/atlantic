@@ -15,6 +15,7 @@ Atlantic 9.6.0
   ZK-4828: remove externally loaded resources with internal refs.
   ZK-4840: navbar navitem icon/text alignment
   ZK-4850: Autopaging row height calculation incorrect by 1px
+  ZK-4873: Theme build process fails in windows due to escaping
 
 * Upgrade Notes:
 

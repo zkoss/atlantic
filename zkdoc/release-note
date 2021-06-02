@@ -17,6 +17,7 @@ Atlantic 9.6.0
   ZK-4850: Autopaging row height calculation incorrect by 1px
   ZK-4873: Theme build process fails in windows due to escaping
   ZK-4870: borderlayout region caption misaligned
+  ZK-4876: Column layout causes white-space no-wrap on every descendant
 
 * Upgrade Notes:
 

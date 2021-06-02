@@ -36,7 +36,7 @@ public class AtlanticThemeURIHandler implements ThemeURIHandler {
 		if (!Boolean.parseBoolean(Library.getProperty(DONT_USE_GOOGLE_FONT)) && ATLANTIC_NAME.equals(ThemeFns.getCurrentTheme())) {
 			//ZK-2931 can't start the url with "//", encodeURL will prepend
 			//current context path if no scheme were given
-			modifier.add(new StyleSheet(exec.getScheme() + "://fonts.googleapis.com/css?family=Open+Sans", "text/css"));
+			modifier.add(new StyleSheet("https://fonts.googleapis.com/css?family=Open+Sans", "text/css"));
 		}
 	}
 }

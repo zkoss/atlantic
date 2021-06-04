@@ -34,6 +34,7 @@
 		background: darken(@navBackground, (@level - 1) * 5.6);
 	}
 	.z-nav-info,
+	.z-navitem-info,
 	.z-nav-content:before,
 	.z-navseparator:before {
 		background: darken(@navBackground, @level * 5.6);
@@ -227,7 +228,8 @@
 .z-nav-selected > .z-nav-content:before {
 	display: block;
 }
-.z-nav-info {
+.z-nav-info,
+.z-navitem-info {
 	.fontStyle(@contentFontFamily, @fontSizeMedium, @fontWeightSemiBold, @navColor);
 	.displaySize(block, @iconWidth, @iconHeight);
 	.borderRadius(@iconWidth / 2);

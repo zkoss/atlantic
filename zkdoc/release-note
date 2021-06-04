@@ -10,6 +10,7 @@ Atlantic 9.6.0
   ZK-4858: slider knob styles contain invalid css property
   ZK-4777: signature can have a background image
   ZK-4674: Atlantic: always use HTTPS scheme for fonts.googleapis.com
+  ZK-4874: navitem supports badgeText
 
 * Bugs:
   ZK-4801: Atlantic: adds google-font for all themes

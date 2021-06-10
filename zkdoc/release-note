@@ -20,6 +20,7 @@ Atlantic 9.6.0
   ZK-4873: Theme build process fails in windows due to escaping
   ZK-4870: borderlayout region caption misaligned
   ZK-4876: Column layout causes white-space no-wrap on every descendant
+  ZK-4916: tbeditor setValue only sets source, doesn't affect display without rerender
 
 * Upgrade Notes:
 

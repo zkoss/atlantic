@@ -21,6 +21,7 @@ Atlantic 9.6.0
   ZK-4870: borderlayout region caption misaligned
   ZK-4876: Column layout causes white-space no-wrap on every descendant
   ZK-4916: tbeditor setValue only sets source, doesn't affect display without rerender
+  ZK-4920: listbox (autopaging) listitem height incorrect between iceblue/iceblue_c
 
 * Upgrade Notes:
 

@@ -86,7 +86,18 @@
 	&-toolbar {
 		.z-combobutton-content,
 		.z-combobutton-button {
+			color: @toolbarButtonColor;
+			background: transparent;
 			border-color: transparent;
+		}
+		.z-combobutton-icon {
+			color: @toolbarButtonColor;
+		}
+
+		&:hover {
+			.z-combobutton-icon {
+				color: @hoverColor;
+			}
 		}
 
 		&[disabled] {

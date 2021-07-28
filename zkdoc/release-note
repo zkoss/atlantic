@@ -23,6 +23,7 @@ Atlantic 9.6.0
   ZK-4916: tbeditor setValue only sets source, doesn't affect display without rerender
   ZK-4920: listbox (autopaging) listitem height incorrect between iceblue/iceblue_c
   ZK-4535: Combobutton toolbar mold has a border
+  ZK-4977: Triggering @MatchMedia by immediate resizing is not working in Desktop since Chrome 92
 
 * Upgrade Notes:
 

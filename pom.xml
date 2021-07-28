@@ -5,7 +5,7 @@
 	<artifactId>atlantic</artifactId>
 	<version>9.6.0-SNAPSHOT</version>
 	<properties>
-		<zk.version>9.6.0.FL.20210323-Eval</zk.version>
+		<zk.version>9.6.0.FL.20210727-Eval</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}</packname>
 		<zktheme.resources>${project.basedir}/src/archive</zktheme.resources>

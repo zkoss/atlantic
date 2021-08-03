@@ -3,14 +3,12 @@
 .z-auxhead {
 	th:first-child {
 		border-left: none;
+		border-left-width: 0;
 
 		// B50-3306729: the first header should have border-left when the first column is covered with other header
 		&.z-auxhead-border {
 			border-left: 1px solid @meshTitleBorderColor;
 		}
-	}
-	th:first-child {
-		border-left-width: 0;
 	}
 	&-bar {
 		border-top: 1px solid @meshTitleBorderColor;

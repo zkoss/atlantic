@@ -20,6 +20,45 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	// notification arrow
+	// Base style
+	&-left, &-right, &-up, &-down {
+		border: 10px solid transparent;
+	}
+	&-left { border-right-color: @notificationArrowColor; }
+	&-right { border-left-color: @notificationArrowColor; }
+	&-up { border-down-color: @notificationArrowColor; }
+	&-down { border-top-color: @notificationArrowColor; }
+	// Info style
+	&-info {
+		.z-notification {
+			&-content { background: @notificationInfoColor; }
+			&-left { border-right-color: @notificationInfoColor; }
+			&-right {border-left-color: @notificationInfoColor; }
+			&-up { border-down-color: @notificationInfoColor; }
+			&-down { border-top-color: @notificationInfoColor; }
+		}
+	}
+	// Warning style
+	&-warning {
+		.z-notification {
+			&-content { background: @notificationWarningColor; }
+			&-left { border-right-color: @notificationWarningColor; }
+			&-right { border-left-color: @notificationWarningColor; }
+			&-up { border-down-color: @notificationWarningColor; }
+			&-down { border-top-color: @notificationWarningColor; }
+		}
+	}
+	// Error style
+	&-error {
+		.z-notification {
+			&-content { background: @notificationErrorColor; }
+			&-left { border-right-color: @notificationErrorColor; }
+			&-right { border-left-color: @notificationErrorColor; }
+			&-up { border-down-color: @notificationErrorColor; }
+			&-down { border-top-color: @notificationErrorColor; }
+		}
+	}
 }
 
 .z-notification-icon {
@@ -79,47 +118,6 @@
 	border: 10px solid transparent;
 	position: absolute;
 	z-index: 100;
-}
-// notification arrow
-.z-notification {
-	// Base style
-	&-left, &-right, &-up, &-down {
-		border: 10px solid transparent;
-	}
-	&-left { border-right-color: @notificationArrowColor; }
-	&-right { border-left-color: @notificationArrowColor; }
-	&-up { border-down-color: @notificationArrowColor; }
-	&-down { border-top-color: @notificationArrowColor; }
-	// Info style
-	&-info {
-		.z-notification {
-			&-content { background: @notificationInfoColor; }
-			&-left { border-right-color: @notificationInfoColor; }
-			&-right {border-left-color: @notificationInfoColor; }
-			&-up { border-down-color: @notificationInfoColor; }
-			&-down { border-top-color: @notificationInfoColor; }
-		}
-	}
-	// Warning style
-	&-warning {
-		.z-notification {
-			&-content { background: @notificationWarningColor; }
-			&-left { border-right-color: @notificationWarningColor; }
-			&-right { border-left-color: @notificationWarningColor; }
-			&-up { border-down-color: @notificationWarningColor; }
-			&-down { border-top-color: @notificationWarningColor; }
-		}
-	}
-	// Error style
-	&-error {
-		.z-notification {
-			&-content { background: @notificationErrorColor; }
-			&-left { border-right-color: @notificationErrorColor; }
-			&-right { border-left-color: @notificationErrorColor; }
-			&-up { border-down-color: @notificationErrorColor; }
-			&-down { border-top-color: @notificationErrorColor; }
-		}
-	}
 }
 
 .z-notification-close {

@@ -43,6 +43,7 @@
 		vertical-align: middle;
 		cursor: pointer;
 		overflow: hidden;
+		font-size: @fontSizeLarge;
 
 		&:hover {
 			border-color: @hoverBorderColor;
@@ -105,11 +106,6 @@
 	}
 }
 
-.z-timepicker-button {
-	font-size: @fontSizeLarge;
-}
-
-
 // Inplace editing
 .z-timepicker-inplace .z-timepicker-input {
 	padding: @paddingSmall + 1;
@@ -122,10 +118,6 @@
 }
 .z-timepicker-inplace .z-timepicker-button {
 	display: none;
-}
-
-.z-timepicker-popup {
-	max-height: 200px;
 }
 
 .z-timepicker-option {
@@ -156,6 +148,7 @@
 	background: @baseBackground;
 	position: absolute;
 	overflow: auto;
+	max-height: 200px;
 }
 
 .z-timepicker-content {

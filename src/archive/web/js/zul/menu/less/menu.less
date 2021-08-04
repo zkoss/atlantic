@@ -70,6 +70,49 @@
 			line-height: 0;
 		}
 	}
+
+	//define menubar hor scroll
+	&-scroll {
+		overflow: hidden;
+	}
+	&-body {
+		width: 100%;
+		margin: 0 @headerWidth;
+		position: relative;
+		overflow: hidden;
+	}
+	&-content {
+		width: 5500px;
+	}
+	&-scrollable {
+		.size(@headerWidth, 100%);
+		border-width: 0 1px;
+		border-style: solid;
+		border-color: @baseBorderColor;
+		line-height: normal;
+		background: @menuBackground;
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		z-index: 25;
+	}
+	&-left,
+	&-right {
+		padding: 5px 11px;
+	}
+	&-left {
+		left: 0;
+		padding: 5px 12px;
+	}
+	&-icon {
+		.iconFontStyle(@iconSize, @menuColor);
+		margin-top: -@iconSize/2;
+		margin-left: -@iconSize/2;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
 }
 
 // normal content
@@ -207,11 +250,6 @@
 			min-height: @barHeight;
 			padding: (@barHeight - @iconHeight - 2)/2 @paddingSize - 1; //remain @iconHeight(24px) inside, total @barHeight(40px)
 			padding-right: @paddingLarge - 1;
-		}
-		&-image {
-			margin-right: 9px;
-		}
-		&-content {
 			&[disabled],
 			&[disabled]:hover {
 				color: @disabledColor;
@@ -219,6 +257,9 @@
 				.opacity(@disabledOpacity);
 				cursor: default;
 			}
+		}
+		&-image {
+			margin-right: 9px;
 		}
 	}
 	.z-menu-icon {
@@ -266,49 +307,4 @@
 }
 .z-menuitem-checked.z-menuitem-checkable .z-menuitem-icon {
 	display: block;
-}
-
-//define menubar hor scroll
-.z-menubar {
-	&-scroll {
-		overflow: hidden;
-	}
-	&-body {
-		width: 100%;
-		margin: 0 @headerWidth;
-		position: relative;
-		overflow: hidden;
-	}
-	&-content {
-		width: 5500px;
-	}
-	&-scrollable {
-		.size(@headerWidth, 100%);
-		border-width: 0 1px;
-		border-style: solid;
-		border-color: @baseBorderColor;
-		line-height: normal;
-		background: @menuBackground;
-		position: absolute;
-		top: 0;
-		right: 0;
-		cursor: pointer;
-		z-index: 25;
-	}
-	&-left,
-	&-right {
-		padding: 5px 11px;
-	}
-	&-left {
-		left: 0;
-		padding: 5px 12px;
-	}
-	&-icon {
-		.iconFontStyle(@iconSize, @menuColor);
-		margin-top: -@iconSize/2;
-		margin-left: -@iconSize/2;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-	}
 }

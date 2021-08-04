@@ -87,6 +87,8 @@
 .z-west,
 .z-east {
 	height: 100%; // Fixed for B30-1902533.zul
+	.transform('rotate(90deg)');
+	.applyCSS3('transform-origin', 'left bottom');
 }
 
 .z-west,
@@ -147,6 +149,14 @@
 		line-height: @baseLineHeight;
 		position: absolute;
 	}
+	&-title {
+		.fontStyle(@titleFontFamily, @baseFontSize, @fontWeightSemiBold, @baseTextColor);
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		line-height: @iconHeight;
+		position: absolute;
+	}
 }
 .z-north-splitter,
 .z-south-splitter {
@@ -182,26 +192,4 @@
 .z-west-icon.z-icon-ellipsis-v,
 .z-east-icon.z-icon-ellipsis-v {
 	display: none;
-}
-
-.z-north,
-.z-south,
-.z-west,
-.z-east {
-	&-title {
-		.fontStyle(@titleFontFamily, @baseFontSize, @fontWeightSemiBold, @baseTextColor);
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		overflow: hidden;
-		line-height: @iconHeight;
-		position: absolute;
-	}
-}
-
-.z-west,
-.z-east {
-	&-title {
-		.transform('rotate(90deg)');
-		.applyCSS3('transform-origin', 'left bottom');
-	}
 }

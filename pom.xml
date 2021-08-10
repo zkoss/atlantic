@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.zkoss.theme</groupId>
 	<artifactId>atlantic</artifactId>
-	<version>9.6.0-SNAPSHOT</version>
+	<version>9.6.0</version>
 	<properties>
 		<zk.version>9.6.0.FL.20210727-Eval</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>

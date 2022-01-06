@@ -6,6 +6,15 @@ Atlantic 10.0.0
 * Upgrade Notes:
 
   --------
+  Atlantic 9.6.1
+* Features:
+
+* Bugs:
+  ZK-5055: atlantic borderlayout east/west always rotated by 90deg (since 9.6.0)
+
+* Upgrade Notes:
+
+  --------
 Atlantic 9.6.0
 Aug 10, 2021
 * Features:

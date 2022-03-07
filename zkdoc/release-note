@@ -23,6 +23,9 @@ May 24, 2022
   ZK-5055: atlantic borderlayout east/west always rotated by 90deg (since 9.6.0)
 
 * Upgrade Notes:
+  + Some z-class names are changed:
+        z-combobox-emptySearchMessage -> z-combobox-empty-search-message
+        z-combobox-emptySearchMessage-hidden -> z-combobox-empty-search-message-hidden
 
   --------
 Atlantic 9.6.0

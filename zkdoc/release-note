@@ -2,6 +2,23 @@ Atlantic 10.0.0
 * Features:
 
 * Bugs:
+
+* Upgrade Notes:
+
+  --------
+Atlantic 9.6.4
+* Features:
+
+* Bugs:
+
+* Upgrade Notes:
+
+  --------
+Atlantic 9.6.3
+Oct 25, 2022
+* Features:
+
+* Bugs:
   ZK-5253: title of borderlayout north/south shouldn't rotate 90 degrees
 
 * Upgrade Notes:

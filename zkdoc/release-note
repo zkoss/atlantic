@@ -10,6 +10,7 @@ Atlantic 9.6.4
 * Features:
 
 * Bugs:
+  ZK-5061: ZK Embedded loading default ZK styles causes style changes to the outer page
 
 * Upgrade Notes:
 

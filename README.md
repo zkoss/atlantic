@@ -1,5 +1,8 @@
-Atlantic Theme
+Atlantic Theme (Deprecated)
 ========
+
+This project is deprecated as of release 10.0.0,
+please use [ZK Theme Pack](https://www.zkoss.org/product/zkthemepack) instead.
 
 # ZK Flat Design Theme
 
